@@ -1,5 +1,6 @@
 const codemirrorOptions = {
-  lineNumbers: true,
+  theme: "ambiance",
+  lineNumbers: false,
   mode: {name: "python", version: 3, singleLineStringErrors: false},
   indentUnit: 4,
   matchBrackets: true,
