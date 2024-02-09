@@ -63,7 +63,7 @@ a {
     display: none;
     max-width: 50rem;
     margin: auto;
-    padding: 0 8rem;
+    padding: 0 1.2rem;
     height: 70dvh;
     overflow: auto;
 }
