@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.terminal.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/livro.css">
+    <title>Livro - Programo Py</title>
+  </head>
+  <body>
+    <div id="loading">&nbsp;</div>
+
+    <div id="content">
+      <div id="chapter">
+        <h1>Início</h1>
+
+        <h3>O que é Python?</h3>
+
+        <p>
+          Python é uma linguagem de programação famosa pela sua clareza, versatilidade, e extensa coleção de pacotes contribuídos por grandes empresas e indivíduos, servindo para milhares de utilidades.
+        </p>
+
+        <p>
+          Ela é uma linguagem interpretada, que significa que um trecho de código pode ser executado imediatamente, sem obrigar o programador a pausar para compilar seu código (transformar os símbolos do código em linguagem de máquina), como acontece nas linguagens compiladas.
+        </p>
+
+        <h3>Por que ler este livro</h3>
+
+        <p>
+          Já existem dezenas de livros bons sobre Python. Como este livro é diferente? Este livro foi projetado para quem não tem muita experiência de programação, mas deseja desenvolver a competência para criar programas úteis e entender o código de outros programadores.
+        </p>
+
+        <p>
+          Meu objetivo é explicar as principais características e funcionalidades de Python de maneira acessível, usando diversos exemplos e evitando complicações desnecessárias.
+        </p>
+
+        <p>
+          Após terminar a leitura, desejo que você tenha a confiança para projetar programas úteis, seguir tutoriais de bibliotecas do seu interesse, entender o código de outros, e continuar sua jornada com livros mais avançados.
+        </p>
+
+        <p>
+          Para experimentar a escrever código Python imediatamente, esta página inclue um interpretador Python e é possível editar trechos curtos de Python com facilidade.
+        </p>
+
+        <h3>Requisitos</h3>
+
+        <p>
+          Esta página deve ser usada num ambiente de desktop, e foi testada com Google Chrome (versão 121).
+        </p>
+
+        <p>
+          Num ambiente móvel (smartphone), o interpretador e editor não funcionam corretamente.
+        </p>
+
+        <p>
+          Use um computador desktop se gostaria de praticar a escrever código usando esta interface.
+        </p>
+
+        <h3>Como escrever Python nesta página</h3>
+
+        <p>
+          Na parte inferior da página está o interpretador interativo de Python. Os três sinais de "maior que" <code>&gt;&gt;&gt;</code> indicam que o interpretador está pronto para receber seu código.
+        </p>
+
+        <p>
+          Experimente clicar na janela preta abaixo, e digite <code>1 + 2</code>. Para pedir que o interpretador avalie (calcular) esta expressão, tecle <code>Enter</code> (também chamado de <code>Return</code>).
+        </p>
+
+        <p>
+          Você verá o resultado, <code>3</code>, numa linha abaixo.
+        </p>
+
+        <p>
+          No conteúdo deste livro, haverão blocos editáveis de código, que terão esta aparência:
+        </p>
+
+        <p>
+          <textarea id="block_inicio_a_plus_b">
+a = 10
+b = 15
+
+print(a + b)</textarea>
+        </p>
+
+        <p>
+          Clique dentro desse editor para ativar o cursor. Com o cursor dentro do editor, segure <code>Shift</code> e tecle <code>Enter</code> (também chamado de <code>Return</code>) para enviar este código ao interpretador. Esta combinação é frequentemente escrita <code>Shift + Enter</code>.
+        </p>
+
+        <p>
+          Outros blocos contém código independente, mas uma vez enviada ao interpretador, eles permanecerão lá. (Observe que reutilizei a variável <code>b</code> do primeiro bloco, e se este segundo bloco ser avaliado primeiro, o interpretador dirá que <code>a</code> não foi definido).
+        </p>
+
+        <p>
+          <textarea id="block_inicio_reuse_a">
+c = 100
+
+print(b + c)</textarea>
+        </p>
+
+        <p>
+          Você poderá fazer alterações ao código, e quando terminar, tecle <code>Shift + Enter</code> para que o interpretador receba as atualizações.
+        </p>
+      </div>
+    </div>
+
+    <div id="bottomPadding">
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.terminal.js"></script>
+    <script src="js/unix_formatting.js"></script>
+    <script src="js/codemirror.js"></script>
+    <script src="js/codemirror_python.js"></script>
+    <script src="js/matchbrackets.js"></script>
+
+    <script src="js/init_codemirror.js"></script>
+    <script src="js/init_pyodide.js"></script>
+  </body>
+</html>
