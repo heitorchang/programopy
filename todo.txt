@@ -1,1 +1,4 @@
-[  ] padding for codemirror editor
+Note: cm is codemirror
+
+[  ] padding for cm editor
+[  ] see if now that pages are static, the cm settimeout can be removed
