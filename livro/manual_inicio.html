@@ -13,8 +13,7 @@
     <div id="loading">&nbsp;</div>
 
     <div id="content">
-      <div id="chapter">
-        <h1>Início</h1>
+        <h1>Prefácio</h1>
 
         <h3>O que é Python?</h3>
 
@@ -23,39 +22,31 @@
         </p>
 
         <p>
-          Ela é uma linguagem interpretada, que significa que um trecho de código pode ser executado imediatamente, sem obrigar o programador a pausar para compilar seu código (transformar os símbolos do código em linguagem de máquina), como acontece nas linguagens compiladas.
+          Ela é uma linguagem interpretada, que significa que um trecho de código pode ser executado imediatamente, sem obrigar o programador a pausar para compilar seu código (transformar os símbolos do código em linguagem de máquina), como é feito nas linguagens compiladas.
         </p>
 
-        <h3>Por que ler este livro</h3>
+        <h3>Sobre este livro</h3>
 
         <p>
-          Já existem dezenas de livros bons sobre Python. Como este livro é diferente? Este livro foi projetado para quem não tem muita experiência de programação, mas deseja desenvolver a competência para criar programas úteis e entender o código de outros programadores.
-        </p>
-
-        <p>
-          Meu objetivo é explicar as principais características e funcionalidades de Python de maneira acessível, usando diversos exemplos e evitando complicações desnecessárias.
+          Este livro foi projetado para quem não tem muita experiência de programação e deseja desenvolver a competência para criar programas úteis e entender o código de outros programadores.
         </p>
 
         <p>
-          Após terminar a leitura, desejo que você tenha a confiança para projetar programas úteis, seguir tutoriais de bibliotecas do seu interesse, entender o código de outros, e continuar sua jornada com livros mais avançados.
+          Explico as principais características e funcionalidades de Python de maneira acessível, usando diversos exemplos e evitando complicações desnecessárias.
         </p>
 
         <p>
-          Para experimentar a escrever código Python imediatamente, esta página inclue um interpretador Python e é possível editar trechos curtos de Python com facilidade.
+          Para experimentar a escrever código Python imediatamente, montei uma interface web com um interpretador Python e um editor para manipular trechos curtos de código.
         </p>
 
         <h3>Requisitos</h3>
 
         <p>
-          Esta página deve ser usada num ambiente de desktop, e foi testada com Google Chrome (versão 121).
+          Para interagir com o interpretador e editor, é recomendado usar um ambiente de desktop. A interface foi testada com Google Chrome (versão 121).
         </p>
 
         <p>
-          Num ambiente móvel (smartphone), o interpretador e editor não funcionam corretamente.
-        </p>
-
-        <p>
-          Use um computador desktop se gostaria de praticar a escrever código usando esta interface.
+          Não foram feitos teste de usabilidade num ambiente móvel (em smartphones), e não tenho recursos suficientes para garantir a operação correta nos smartphones mais populares.
         </p>
 
         <h3>Como escrever Python nesta página</h3>
@@ -65,7 +56,7 @@
         </p>
 
         <p>
-          Experimente clicar na janela preta abaixo, e digite <code>1 + 2</code>. Para pedir que o interpretador avalie (calcular) esta expressão, tecle <code>Enter</code> (também chamado de <code>Return</code>).
+          Experimente clicar na janela preta abaixo, e digite <code>1 + 2</code>. Para pedir que o interpretador avalie (isto é, produza um valor para) esta expressão, tecle <code>Enter</code> (também chamado de <code>Return</code>).
         </p>
 
         <p>
@@ -82,10 +73,15 @@ a = 10
 b = 15
 
 print(a + b)</textarea>
+          <button onclick="sendTextarea('block_inicio_a_plus_b')">Avalie</button>
         </p>
 
         <p>
           Clique dentro desse editor para ativar o cursor. Com o cursor dentro do editor, segure <code>Shift</code> e tecle <code>Enter</code> (também chamado de <code>Return</code>) para enviar este código ao interpretador. Esta combinação é frequentemente escrita <code>Shift + Enter</code>.
+        </p>
+
+        <p>
+          Se preferir, clicando no botão amarelo <strong>Avalie</strong> terá o mesmo efeito.
         </p>
 
         <p>
@@ -97,15 +93,28 @@ print(a + b)</textarea>
 c = 100
 
 print(b + c)</textarea>
+          <button onclick="sendTextarea('block_inicio_reuse_a')">Avalie</button>
         </p>
 
         <p>
           Você poderá fazer alterações ao código, e quando terminar, tecle <code>Shift + Enter</code> para que o interpretador receba as atualizações.
         </p>
-      </div>
-    </div>
 
-    <div id="bottomPadding">
+        <table class="ch-links">
+          <tr>
+            <td class="prev-ch-link">
+              <a href="index.html">&lt;&lt;&lt; Homepage</a>
+            </td>
+            <td class="next-ch-link">
+              <a href="cap01.html">Capítulo 1 &gt;&gt;&gt;</a>
+            </td>
+          </tr>
+        </table>
+
+        <p>
+          <br><br><br>
+        </p>
+
     </div>
 
     <script src="js/jquery.min.js"></script>

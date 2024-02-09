@@ -7,7 +7,10 @@ const codemirrorOptions = {
   extraKeys: {
     "Shift-Enter": function(cm) {
       cm.save();
-      sendTextareaValue(cm.getTextArea().id);
-    }
+      sendTextarea(cm.getTextArea().id);
+    },
+    "Ctrl-I": function(cm) {
+      term.focus();
+    },
   }
 };

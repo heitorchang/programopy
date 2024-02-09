@@ -1,4 +1,5 @@
 Note: cm is codemirror
 
-[  ] padding for cm editor
-[  ] see if now that pages are static, the cm settimeout can be removed
+[  ] create pseudo markup with single lines becoming <p>, replacing & with &amp; < with &lt; > with &gt;. Placing #py by itself in a line marks the beginning of a textarea block, and the block ends with #end. The textarea should have an id of "filename_n" where n is an integer counter. Add a button to evaluate the textarea given the same id.
+[OK] padding for cm editor
+[OK] see if now that pages are static, the cm settimeout can be removed

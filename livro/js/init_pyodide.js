@@ -153,17 +153,9 @@ async function main() {
         }
         return original(event);
       },
-      /*
-         // probably not useful because there will be many textareas.
-         "CTRL+Q": (event, original) => {
+      "CTRL+Q": (event, original) => {
          term.disable();
-         $("#py_block").focus();
-         },
-         "ALT+Q": (event, original) => {
-         term.disable();
-         $("#py_block").focus();
-         },
-       */
+      },
     },
   });
   window.term = term;
@@ -176,6 +168,11 @@ async function main() {
   $("#content").show();
   // hide the blinking cursor
   term.disable();
+
+  const textareas = $('#content textarea')
+  textareas.each((index, ta) => {
+    CodeMirror.fromTextArea(ta, codemirrorOptions);
+  });
 
   pyodide._api.on_fatal = async (e) => {
     if (e.name === "Exit") {
@@ -218,25 +215,16 @@ function sendToInterpreter(py) {
   // window.setTimeout(term.focus, 150);
 }
 
-function sendTextareaValue(id) {
+function sendTextarea(id) {
   const py = $("#" + id).val();
   sendToInterpreter(py);
 }
 
+/*
 function captureShiftEnter(event) {
   if (event.shiftKey && event.keyCode === 13) {
     event.preventDefault();
-    sendTextareaValue(event.target.id);
+    sendTextarea(event.target.id);
   }
 }
-
-function setUpCodeMirrors() {
-  window.setTimeout(() => {
-    const textareas = $('#content textarea')
-    textareas.each((index, ta) => {
-      CodeMirror.fromTextArea(ta, codemirrorOptions);
-    });
-  }, 500);
-}
-
-setUpCodeMirrors();
+*/
