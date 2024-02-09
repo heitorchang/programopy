@@ -1,8 +1,7 @@
 "use strict";
 
 async function main() {
-  const host = "http://127.0.0.1:8000/"
-  let indexURL = host + "livro/pyodide-core/";
+  let indexURL = my_host + "livro/pyodide-core/";
   const urlParams = new URLSearchParams(window.location.search);
   const buildParam = urlParams.get("build");
   if (buildParam) {
