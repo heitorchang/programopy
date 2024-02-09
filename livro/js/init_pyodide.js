@@ -1,5 +1,7 @@
 "use strict";
 
+const cm_instances = new Map();
+
 async function main() {
   let indexURL = my_host + "livro/pyodide-core/";
   const urlParams = new URLSearchParams(window.location.search);
@@ -170,7 +172,7 @@ async function main() {
 
   const textareas = $('#content textarea')
   textareas.each((index, ta) => {
-    CodeMirror.fromTextArea(ta, codemirrorOptions);
+    cm_instances.set(ta.id, CodeMirror.fromTextArea(ta, codemirrorOptions));
   });
 
   pyodide._api.on_fatal = async (e) => {
@@ -215,6 +217,7 @@ function sendToInterpreter(py) {
 }
 
 function sendTextarea(id) {
+  cm_instances.get(id).save();
   const py = $("#" + id).val();
   sendToInterpreter(py);
 }
