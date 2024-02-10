@@ -10,7 +10,7 @@ def calcule_total(núm_pizzas, núm_refris):
     return (núm_pizzas * valor_pizza) + (núm_refris * valor_refri)
 @endpy
 
-$p Repare que no nome das variáveis, acentuei <code>núm</code>. Python também permite que use caracteres especiais como <code>π</code> em nomes, que podem facilitar a leitura. Lembre-se que cada vez que usar o nome, terá que digitá-lo exatamente da mesma forma.
+$p Python permite caracteres acentuados e até de outros idiomas nos nomes, como <code>π</code>, que podem facilitar a leitura. Mas lembre-se que o nome terá que ser sempre digitado da mesma forma.
 
 @py
 aprox_π = 3.14
