@@ -43,6 +43,8 @@ $p Se preferir, clicando no botão amarelo <strong>Avalie</strong> terá o mesmo
 
 $p Para pular imediatamente ao interpretador após avaliar o código, tecle <code>Ctrl + Enter</code>.
 
+$p Não se preocupe muito em entender a sintaxe (regras de como escrever código) desse trecho agora. Explicarei ele melhor nos capítulos iniciais.
+
 $p Os blocos contém código independentes, mas uma vez enviada ao interpretador, as definições anteriores permanecerão no interpretador. (Observe que reutilizei a variável <code>bananas</code> do primeiro bloco, e se esse segundo bloco for avaliado primeiro, o interpretador dirá que <code>bananas</code> não foi definido).
 
 @py
@@ -51,4 +53,8 @@ jabuticabas = 100
 print(bananas + jabuticabas)
 @endpy
 
-$p Você poderá fazer alterações no código, e quando terminar, tecle <code>Shift + Enter</code> ou <code>Ctrl + Enter</code> para que o interpretador se atualize.
+$p Você poderá fazer alterações no código, e quando terminar, tecle <code>Shift + Enter</code> ou <code>Ctrl + Enter</code> para que o interpretador avalie o código novo.
+
+$h3 Capítulo zero?
+
+$p Em Python, a contagem de ítens de listas e outras sequências começam com <code>0</code>, e não <code>1</code>. Não vou justificar nenhum dos dois lados, mas se quiser entender o ponto de vista de alguém experiente, indico um artigo do cientista da computação Edsger Dijkstra chamado <em><a href="https://www.google.com/search?q=dijkstra+why+numbering+should+start+at+zero" target="_blank">Why numbering should start at zero (busque no Google)</a></em>.

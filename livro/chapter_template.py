@@ -14,15 +14,18 @@ HEADER = '''<!doctype html>
     <div id="loading">&nbsp;</div>
 
     <div id="content">
+      <div id="chapter">
 <p>
-  <a href="index.html" class="home-link">Programo Python - Home</a>
+  <a href="index.html" class="home-link">Índice</a>
 </p>
 '''
 
 FOOTER = '''
-<p>
-  <a href="index.html" class="home-link">Programo Python - Home</a>
-</p>
+  <p>
+    <a href="index.html" class="home-link">Índice</a>
+  </p>
+  </div>
+</div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.terminal.js"></script>
