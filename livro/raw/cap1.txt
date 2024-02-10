@@ -20,7 +20,7 @@ $h3 Chamando funções
 
 $p Uma função executa uma sequência de operações, e pode agir em qualquer número de valores passados a ela. Um valor que é passado a uma função é chamado de <strong>argumento</strong>.
 
-$p No bloco de código acima, a palavra <code>print</code> é o nome de uma função embutida (já definida e incluída ao iniciar o interpretador).
+$p No bloco de código acima, a palavra <code>print</code> é o nome de uma função embutida (já definida e incluída ao iniciar o interpretador). Essa função exibe uma representação legível dos valores que recebeu.
 
 $p Para chamar uma função, é preciso saber quais valores passar à função. Nesse caso, a função é <code>print</code> e o valor é <code>"Olá, mundo!"</code>.
 
