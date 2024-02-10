@@ -1,4 +1,4 @@
-Programo Py
+Programo Python
 
 MIT License
 

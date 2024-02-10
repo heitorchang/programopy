@@ -172,6 +172,9 @@ INDEX_TEMPLATE = '''
 
 
 INDEX_TEMPLATE_FOOTER = '''
+<p>
+<a href="creditos.html">Créditos</a>
+</p>
     </div>
     </div>
   </body>
