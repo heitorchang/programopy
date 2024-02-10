@@ -1,6 +1,6 @@
 Note: cm is codemirror
 
-[  ] create pseudo markup with single lines becoming <p>, replacing & with &amp; < with &lt; > with &gt;. Placing #py by itself in a line marks the beginning of a textarea block, and the block ends with #end. The textarea should have an id of "filename_n" where n is an integer counter. Add a button to evaluate the textarea given the same id.
+[  ] create pseudo markup with single lines becoming <p>, replacing & with &amp; < with &lt; > with &gt;. Placing #py by itself in a line marks the beginning of a textarea block, and the block ends with #endpy. The textarea should have an id of "filename_n" where n is an integer counter. Add a button to evaluate the textarea given the same id.
 [  ] favicon.ico
 
 [OK] padding for cm editor
