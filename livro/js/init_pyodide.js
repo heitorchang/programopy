@@ -266,10 +266,10 @@ function captureShiftEnter(event) {
 
 let showTerminal = window.localStorage.getItem('programopy__showTerminal');
 
-if (showTerminal === 'true') {
-  showTerminal = true;
-} else {
+if (showTerminal === 'false') {
   showTerminal = false;
+} else {
+  showTerminal = true;
 }
 
 function toggleTerminal() {
