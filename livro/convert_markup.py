@@ -53,7 +53,7 @@ def wrap_py_block(lines):
     for line in lines:
         textarea_contents += line
     textarea_contents = textarea_contents[:-1]  # remove final newline
-    textarea_contents += f'''</textarea>\n<button onclick="sendTextarea('{textarea_id}', true)">Avalie</button></p>'''
+    textarea_contents += f'''</textarea>\n<button onclick="sendTextarea('{textarea_id}', false)">Avalie</button></p>'''
 
     return textarea_contents
 
@@ -154,7 +154,8 @@ INDEX_TEMPLATE = '''
     <title>Livro - Programo Py</title>
   </head>
   <body>
-    <div style="margin: 0 8rem;">
+    <div style="text-align: center;">
+    <div style="max-width: 60rem; margin: auto; text-align: left;">
       <h1>Programo Python</h1>
       <p>
         Um livro interativo para aprender a programar em Python
@@ -171,6 +172,7 @@ INDEX_TEMPLATE = '''
 
 
 INDEX_TEMPLATE_FOOTER = '''
+    </div>
     </div>
   </body>
 </html>
