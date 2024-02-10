@@ -19,7 +19,7 @@
   <a href="index.html" class="home-link">Índice</a>
 </p>
 
-<h1>1. Relatando contas simples</h1>
+<h1>1. Faça contas simples</h1>
 
 <h3>Olá, mundo!</h3>
 
@@ -29,8 +29,8 @@
 
 <p>Com o interpretador Python já inicializado, basta chamar (em outras palavras, pedir para o interpretador rodar) a função <code>print</code></p>
 
-<p><textarea id="block_1707597947902788">print("Olá, mundo!")</textarea>
-<button onclick="sendTextarea('block_1707597947902788', false)">Avalie</button></p>
+<p><textarea id="block_17075989579749339">print("Olá, mundo!")</textarea>
+<button onclick="sendTextarea('block_17075989579749339', false)">Avalie</button></p>
 <p>Clique no botão amarelo <strong>Avalie</strong>, ou clique dentro da caixa escura e digite <code>Shift + Enter</code>. O interpretador na parte baixa da página exibirá o texto <code>Olá, mundo!</code>.</p>
 
 <p>Esses blocos de código são editáveis. Experimente trocar <code>mundo</code> por <code>Guido</code>, e repita a avaliação do código.</p>
@@ -47,8 +47,8 @@
 
 <p>O que acontece se temos mais de um argumento? Os separamos com vírgulas:</p>
 
-<p><textarea id="block_17075979480032113">print("Pão e café são", 1 + 2, "reais.")</textarea>
-<button onclick="sendTextarea('block_17075979480032113', false)">Avalie</button></p>
+<p><textarea id="block_17075989580753078">print("Pão e café são", 1 + 2, "reais.")</textarea>
+<button onclick="sendTextarea('block_17075989580753078', false)">Avalie</button></p>
 <p>Avalie essa linha de código seguindo o mesmo procedimento de antes.</p>
 
 <p>Reparou que Python calculou sozinho a soma de <code>1 + 2</code> na saída? Argumentos são avaliados (reduzidos ao valor mais simples possível, seguindo as regras para esse tipo de valor), e em seguida, passados à função.</p>
@@ -65,16 +65,16 @@
 
 <p>Se você precisa incluir aspas do mesmo tipo das pontas do string, é necessário colocar uma barra invertida antes das aspas. Por exemplo:</p>
 
-<p><textarea id="block_17075979481036353">print("Esse robô se chama \"PY-001\". É lindo, não é?")</textarea>
-<button onclick="sendTextarea('block_17075979481036353', false)">Avalie</button></p>
+<p><textarea id="block_17075989581756985">print("Esse robô se chama \"PY-001\". É lindo, não é?")</textarea>
+<button onclick="sendTextarea('block_17075989581756985', false)">Avalie</button></p>
 <h3>Números</h3>
 
 <p>Atrás das abstrações que te permitem a ler esta frase, computadores processam milhões, ou bilhões de números. Com Python, você pode facilmente manipular todos os tipos de números que estamos acostumados a usar, incluindo formatos científicos e de linguagem de máquina (como em binário e hexadecimal).</p>
 
 <p>O exemplo abaixo mostra como calcular a média de três notas. Clique dentro da caixa, e em seguida tecle <code>Shift + Enter</code> (ou clique no botão amarelo, <strong>Avalie</strong>). Você verá o resultado no interpretador, <code>8.466...</code>.</p>
 
-<p><textarea id="block_17075979482039852">(9.6 + 8.2 + 7.6) / 3</textarea>
-<button onclick="sendTextarea('block_17075979482039852', false)">Avalie</button></p>
+<p><textarea id="block_1707598958275991">(9.6 + 8.2 + 7.6) / 3</textarea>
+<button onclick="sendTextarea('block_1707598958275991', false)">Avalie</button></p>
 <ul>
 
 <li>+ soma</li>
@@ -91,32 +91,14 @@
 
 <p>No último capítulo criei três variáveis com nomes de frutas e somei-as. Vamos usar um outro exemplo: quanto vale uma quantia de reais em dólares?</p>
 
-<p><textarea id="block_17075979483043451">reais = 1000
+<p><textarea id="block_17075989583762884">reais = 1000
 taxa_de_câmbio = 4.96
 dólares = reais / taxa_de_câmbio
 
 print("Terei $", dólares)</textarea>
-<button onclick="sendTextarea('block_17075979483043451', false)">Avalie</button></p>
-<p>No momento quando escrevi esse trecho, o valor é aproximadamente <code>$ 201.61</code></p>
+<button onclick="sendTextarea('block_17075989583762884', false)">Avalie</button></p>
+<p>O valor é aproximadamente <code>$ 201.61</code>. Veremos como formatar esse valor mais adiante.</p>
 
-<h3>Pedindo pizzas para amigos</h3>
-
-<p><textarea id="block_17075979484046628">def calcule_total(núm_pizzas, núm_refris):
-    valor_pizza = 50
-    valor_refri = 15
-
-    return (núm_pizzas * valor_pizza) + (núm_refris * valor_refri)</textarea>
-<button onclick="sendTextarea('block_17075979484046628', false)">Avalie</button></p>
-<p>Python permite caracteres acentuados e até de outros idiomas nos nomes, como <code>π</code>, que podem facilitar a leitura. Mas lembre-se que o nome terá que ser sempre digitado da mesma forma.</p>
-
-<p><textarea id="block_17075979485049872">aprox_π = 3.14
-print(2 * aprox_π)</textarea>
-<button onclick="sendTextarea('block_17075979485049872', false)">Avalie</button></p>
-<h3>Comparando números</h3>
-
-<p><textarea id="block_17075979486052892">total = 105
-print(total > 100)</textarea>
-<button onclick="sendTextarea('block_17075979486052892', false)">Avalie</button></p>
 
         <table class="ch-links">
           <tr>
@@ -126,6 +108,10 @@ print(total > 100)</textarea>
             </td>
         
             
+            <td class="next-ch-link">
+              <a href="cap2.html">2. Crie suas próprias funções &gt;&gt;&gt; </a>
+            </td>
+        
           </tr>
         </table>
     

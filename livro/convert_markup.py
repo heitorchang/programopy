@@ -205,7 +205,7 @@ def generate_index(start_chapter, end_chapter):
 
 if __name__ == '__main__':
     chapter_start = 0
-    chapter_end = 1
+    chapter_end = 3
     generate_index(chapter_start, chapter_end)
 
     for i in range(chapter_start, chapter_end + 1):

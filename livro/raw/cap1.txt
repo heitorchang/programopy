@@ -1,4 +1,4 @@
-$h1 Relatando contas simples
+$h1 Faça contas simples
 
 $h3 Olá, mundo!
 
@@ -85,28 +85,4 @@ dólares = reais / taxa_de_câmbio
 print("Terei $", dólares)
 @end
 
-$p No momento quando escrevi esse trecho, o valor é aproximadamente <code>$ 201.61</code>
-
-$h3 Pedindo pizzas para amigos
-
-@py
-def calcule_total(núm_pizzas, núm_refris):
-    valor_pizza = 50
-    valor_refri = 15
-
-    return (núm_pizzas * valor_pizza) + (núm_refris * valor_refri)
-@endpy
-
-$p Python permite caracteres acentuados e até de outros idiomas nos nomes, como <code>π</code>, que podem facilitar a leitura. Mas lembre-se que o nome terá que ser sempre digitado da mesma forma.
-
-@py
-aprox_π = 3.14
-print(2 * aprox_π)
-@end
-
-$h3 Comparando números
-
-@py
-total = 105
-print(total > 100)
-@end
+$p O valor é aproximadamente <code>$ 201.61</code>. Veremos como formatar esse valor mais adiante.
