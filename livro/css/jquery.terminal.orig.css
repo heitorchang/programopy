@@ -89,6 +89,22 @@
 terminal.terminal-temp {
     visibility: hidden;
 }
+body.terminal {
+    height: 30dvh;
+}
+html {
+    height: 100%;
+}
+body.terminal, body.full-screen-terminal {
+    margin: 0;
+    height: 30dvh;
+}
+body.full-screen-terminal .terminal {
+    height: 30dvh;
+}
+.terminal > div.terminal-fill {
+    height: 30dvh;
+}
 .terminal > .terminal-pixel {
     position: absolute;
     display: inline;

@@ -168,6 +168,9 @@ async function main() {
   term.ready = Promise.resolve();
   $("#loading").hide();
   $("#content").show();
+  $("#terminal-control").show();
+  toggleTerminal();
+
   // hide the blinking cursor
   term.disable();
 
@@ -206,6 +209,9 @@ function sleep(s) {
 }
 
 function sendToInterpreter(py, switch_focus) {
+  showTerminal = true;
+  toggleTerminal();
+
   py = py.trim();
   // remove blank lines
   py = py.replace(/^\s*$(?:\r\n?|\n)/gm, "");
@@ -234,7 +240,6 @@ function sendToInterpreter(py, switch_focus) {
   if (current_block !== '') {
     logical_blocks.push(current_block);
   }
-  console.log(logical_blocks);
   logical_blocks.forEach((block) => {
     term.exec(block);
   });
@@ -257,3 +262,33 @@ function captureShiftEnter(event) {
   }
 }
 */
+
+
+let showTerminal = window.localStorage.getItem('programopy__showTerminal');
+
+if (showTerminal === 'true') {
+  showTerminal = true;
+} else {
+  showTerminal = false;
+}
+
+function toggleTerminal() {
+  const terminalControl = document.getElementById("terminal-control");
+  const terminalElements = document.querySelectorAll(".terminal, .terminal-fill, .terminal-scroller");
+
+  if (showTerminal) {
+    terminalControl.style.setProperty('bottom', '30dvh');
+    terminalControl.innerHTML = '&times;';
+    terminalElements.forEach((elem) => {
+      elem.style.setProperty('height', '30dvh');
+    });
+  } else {
+    terminalControl.style.setProperty('bottom', '0');
+    terminalControl.innerHTML = 'Abrir interpretador';
+    terminalElements.forEach((elem) => {
+      elem.style.setProperty('height', '0');
+    });
+  }
+  window.localStorage.setItem('programopy__showTerminal', showTerminal);
+  showTerminal = !showTerminal;
+}

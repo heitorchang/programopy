@@ -1,5 +1,11 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .terminal {
-    --size: 1.5;
+    --size: 1.4;
     --color: rgba(255, 255, 255, 0.8);
 }
 
@@ -65,8 +71,12 @@ a {
     width: 100%;
     padding: 0;
     margin: 0;
-    height: 70dvh;
+    height: 100%;
     overflow: auto;
+}
+
+#bottom-padding {
+    height: 35vh;
 }
 
 #chapter {
@@ -130,4 +140,16 @@ button {
 
 .home-chapter-link {
     font-size: 1.4rem;
+}
+
+#terminal-control {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding: 0.3rem 1rem;
+    border-top-right-radius: 0.5rem;
+    bottom: 30dvh;
+    left: 0;
+    color: #fff;
+    background-color: #45b;
 }

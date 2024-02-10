@@ -25,7 +25,12 @@ FOOTER = '''
     <a href="index.html" class="home-link">Índice</a>
   </p>
   </div>
+
+  <div id="bottom-padding">&nbsp;</div>
+
 </div>
+
+    <div id="terminal-control" onclick="toggleTerminal()"></div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.terminal.js"></script>

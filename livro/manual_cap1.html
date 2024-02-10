@@ -29,8 +29,8 @@
 
 <p>Com o interpretador Python já inicializado, basta chamar (em outras palavras, pedir para o interpretador rodar) a função <code>print</code></p>
 
-<p><textarea id="block_1707606792652583">print("Olá, mundo!")</textarea>
-<button onclick="sendTextarea('block_1707606792652583', false)">Avalie</button></p>
+<p><textarea id="block_17075989579749339">print("Olá, mundo!")</textarea>
+<button onclick="sendTextarea('block_17075989579749339', false)">Avalie</button></p>
 <p>Clique no botão amarelo <strong>Avalie</strong>, ou clique dentro da caixa escura e digite <code>Shift + Enter</code>. O interpretador na parte baixa da página exibirá o texto <code>Olá, mundo!</code>.</p>
 
 <p>Esses blocos de código são editáveis. Experimente trocar <code>mundo</code> por <code>Guido</code>, e repita a avaliação do código.</p>
@@ -47,8 +47,8 @@
 
 <p>O que acontece se temos mais de um argumento? Os separamos com vírgulas:</p>
 
-<p><textarea id="block_17076067927530081">print("Pão e café são", 1 + 2, "reais.")</textarea>
-<button onclick="sendTextarea('block_17076067927530081', false)">Avalie</button></p>
+<p><textarea id="block_17075989580753078">print("Pão e café são", 1 + 2, "reais.")</textarea>
+<button onclick="sendTextarea('block_17075989580753078', false)">Avalie</button></p>
 <p>Avalie essa linha de código seguindo o mesmo procedimento de antes.</p>
 
 <p>Reparou que Python calculou sozinho a soma de <code>1 + 2</code> na saída? Argumentos são avaliados (reduzidos ao valor mais simples possível, seguindo as regras para esse tipo de valor), e em seguida, passados à função.</p>
@@ -65,16 +65,16 @@
 
 <p>Se você precisa incluir aspas do mesmo tipo das pontas do string, é necessário colocar uma barra invertida antes das aspas. Por exemplo:</p>
 
-<p><textarea id="block_17076067928534324">print("Esse robô se chama \"PY-001\". É lindo, não é?")</textarea>
-<button onclick="sendTextarea('block_17076067928534324', false)">Avalie</button></p>
+<p><textarea id="block_17075989581756985">print("Esse robô se chama \"PY-001\". É lindo, não é?")</textarea>
+<button onclick="sendTextarea('block_17075989581756985', false)">Avalie</button></p>
 <h3>Números</h3>
 
 <p>Atrás das abstrações que te permitem a ler esta frase, computadores processam milhões, ou bilhões de números. Com Python, você pode facilmente manipular todos os tipos de números que estamos acostumados a usar, incluindo formatos científicos e de linguagem de máquina (como em binário e hexadecimal).</p>
 
 <p>O exemplo abaixo mostra como calcular a média de três notas. Clique dentro da caixa, e em seguida tecle <code>Shift + Enter</code> (ou clique no botão amarelo, <strong>Avalie</strong>). Você verá o resultado no interpretador, <code>8.466...</code>.</p>
 
-<p><textarea id="block_17076067929537678">(9.6 + 8.2 + 7.6) / 3</textarea>
-<button onclick="sendTextarea('block_17076067929537678', false)">Avalie</button></p>
+<p><textarea id="block_1707598958275991">(9.6 + 8.2 + 7.6) / 3</textarea>
+<button onclick="sendTextarea('block_1707598958275991', false)">Avalie</button></p>
 <ul>
 
 <li>+ soma</li>
@@ -91,39 +91,38 @@
 
 <p>No último capítulo criei três variáveis com nomes de frutas e somei-as. Vamos usar um outro exemplo: quanto vale uma quantia de reais em dólares?</p>
 
-<p><textarea id="block_17076067930541294">reais = 1000
+<p><textarea id="block_17075989583762884">reais = 1000
 taxa_de_câmbio = 4.96
 dólares = reais / taxa_de_câmbio
 
 print("Terei $", dólares)</textarea>
-<button onclick="sendTextarea('block_17076067930541294', false)">Avalie</button></p>
+<button onclick="sendTextarea('block_17075989583762884', false)">Avalie</button></p>
 <p>O valor é aproximadamente <code>$ 201.61</code>. Veremos como formatar esse valor mais adiante.</p>
 
 
         <table class="ch-links">
           <tr>
-            
+
             <td class="prev-ch-link">
               <a href="cap0.html"> &lt;&lt;&lt; 0. Programe agora mesmo</a>
             </td>
-        
-            
+
+
             <td class="next-ch-link">
               <a href="cap2.html">2. Crie suas próprias funções &gt;&gt;&gt; </a>
             </td>
-        
+
           </tr>
         </table>
-    
+
 
   <p>
     <a href="index.html" class="home-link">Índice</a>
   </p>
-  </div>
+      </div>
+    </div>
 
-  <div id="bottom-padding">&nbsp;</div>
-
-</div>
+    <div id="bottom-padding">&nbsp;</div>
 
     <div id="terminal-control" onclick="toggleTerminal()"></div>
 
@@ -138,4 +137,3 @@ print("Terei $", dólares)</textarea>
     <script src="js/init_pyodide.js"></script>
   </body>
 </html>
-

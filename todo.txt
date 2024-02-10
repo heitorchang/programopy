@@ -1,5 +1,6 @@
 Note: cm is codemirror
 
+[  ] store terminal state in window.localStorage
 
 To explain later
 ----------------
