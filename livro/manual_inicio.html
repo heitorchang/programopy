@@ -69,10 +69,10 @@
 
         <p>
           <textarea id="block_inicio_a_plus_b">
-a = 10
-b = 15
+maçãs = 10
+bananas = 15
 
-print(a + b)</textarea>
+print(maçãs + bananas)</textarea>
           <button onclick="sendTextarea('block_inicio_a_plus_b')">Avalie</button>
         </p>
 
@@ -85,14 +85,14 @@ print(a + b)</textarea>
         </p>
 
         <p>
-          Outros blocos contém código independente, mas uma vez enviada ao interpretador, eles permanecerão lá. (Observe que reutilizei a variável <code>b</code> do primeiro bloco, e se esse segundo bloco for avaliado primeiro, o interpretador dirá que <code>b</code> não foi definido).
+          Os blocos contém código independentes, mas uma vez enviada ao interpretador, as definições anteriores permanecerão no interpretador. (Observe que reutilizei a variável <code>bananas</code> do primeiro bloco, e se esse segundo bloco for avaliado primeiro, o interpretador dirá que <code>bananas</code> não foi definido).
         </p>
 
         <p>
           <textarea id="block_inicio_reuse_a">
-c = 100
+jacas = 100
 
-print(b + c)</textarea>
+print(bananas + jacas)</textarea>
           <button onclick="sendTextarea('block_inicio_reuse_a')">Avalie</button>
         </p>
 
