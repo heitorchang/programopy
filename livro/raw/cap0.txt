@@ -37,7 +37,7 @@ bananas = 15
 print(maçãs + bananas)
 @endpy
 
-$p Clique dentro desse editor para ativar o cursor. Com o cursor dentro do editor, segure <code>Shift</code> e tecle <code>Enter</code> (também chamado de <code>Return</code>) para enviar este código ao interpretador. Esta combinação é frequentemente escrita <code>Shift + Enter</code>.
+$p Clique dentro dessa caixa para ativar o cursor. Com o cursor dentro do editor, segure <code>Shift</code> e tecle <code>Enter</code> (também chamado de <code>Return</code>) para enviar este código ao interpretador. Esta combinação é frequentemente escrita <code>Shift + Enter</code>.
 
 $p Se preferir, clicando no botão amarelo <strong>Avalie</strong> terá o mesmo efeito.
 
