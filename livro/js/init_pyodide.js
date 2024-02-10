@@ -209,11 +209,35 @@ function sendToInterpreter(py) {
   py = py.trim();
   // remove blank lines
   py = py.replace(/^\s*$(?:\r\n?|\n)/gm, "");
-  if (py.includes('\n')) {
-    // when typing blocks, ... appears by default and needs another Carriage Return
-    py += '\n';
+
+  // separate entire text into logical blocks
+  // otherwise, a def ... followed by the function call doesn't work
+
+  const logical_blocks = [];
+
+  const lines = py.split(/\r?\n|\r|\n/g);
+  let current_line = '';
+  let current_block = '';
+
+  for (let i = 0; i < lines.length; i++) {
+    current_line = lines[i];
+    // replace tabs with 4 spaces
+    current_line = current_line.replaceAll('\t', '    ');
+    if (i > 0 && current_line.substring(0, 1) !== ' ') {
+      logical_blocks.push(current_block);
+      current_block = '';
+    }
+    current_block += current_line + '\n';
   }
-  term.exec(py);
+
+  // add whatever remains
+  if (current_block !== '') {
+    logical_blocks.push(current_block);
+  }
+  console.log(logical_blocks);
+  logical_blocks.forEach((block) => {
+    term.exec(block);
+  });
   // window.setTimeout(term.focus, 150);
 }
 
