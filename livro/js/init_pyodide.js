@@ -3,7 +3,8 @@
 const cm_instances = new Map();
 
 async function main() {
-  let indexURL = my_host + "livro/pyodide-core/";
+  // let indexURL = my_host + "livro/pyodide-core/";
+  let indexURL = "https://heitorchang.github.io/programopy/livro/pyodide-core/";
   const urlParams = new URLSearchParams(window.location.search);
   const buildParam = urlParams.get("build");
   if (buildParam) {
