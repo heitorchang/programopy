@@ -205,7 +205,7 @@ function sleep(s) {
   return new Promise((resolve) => setTimeout(resolve, s));
 }
 
-function sendToInterpreter(py) {
+function sendToInterpreter(py, switch_focus) {
   py = py.trim();
   // remove blank lines
   py = py.replace(/^\s*$(?:\r\n?|\n)/gm, "");
@@ -238,13 +238,15 @@ function sendToInterpreter(py) {
   logical_blocks.forEach((block) => {
     term.exec(block);
   });
-  // window.setTimeout(term.focus, 150);
+  if (switch_focus) {
+    window.setTimeout(term.focus, 200);
+  }
 }
 
-function sendTextarea(id) {
+function sendTextarea(id, switch_focus = false) {
   cm_instances.get(id).save();
   const py = $("#" + id).val();
-  sendToInterpreter(py);
+  sendToInterpreter(py, switch_focus);
 }
 
 /*

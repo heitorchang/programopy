@@ -6,8 +6,10 @@ const codemirrorOptions = {
   matchBrackets: true,
   extraKeys: {
     "Shift-Enter": function(cm) {
-      // cm.save();
-      sendTextarea(cm.getTextArea().id);
+      sendTextarea(cm.getTextArea().id, false);
+    },
+    "Ctrl-Enter": function(cm) {
+      sendTextarea(cm.getTextArea().id, true);
     },
     "Ctrl-I": function(cm) {
       term.focus();

@@ -1,0 +1,54 @@
+$h1 Como usar este livro (não pule!)
+
+$h3 O que é Python?
+
+$p Python é uma linguagem de programação famosa pela sua clareza, versatilidade, e extensa coleção de pacotes contribuídos por grandes empresas e indivíduos, servindo para milhares de utilidades.
+
+$p Ela é uma linguagem interpretada, que significa que um trecho de código pode ser executado imediatamente, sem obrigar o programador a pausar para compilar seu código (transformar os símbolos do código em linguagem de máquina), como é feito nas linguagens compiladas.
+
+$h3 Sobre este livro
+
+$p Este livro foi projetado para quem não tem muita experiência de programação e deseja desenvolver a competência para criar programas úteis e entender o código de outros programadores.
+
+$p Explico as principais características e funcionalidades de Python de maneira acessível, usando diversos exemplos e evitando complicações desnecessárias.
+
+$p Para experimentar a escrever código Python imediatamente, montei uma interface web com um interpretador Python e um editor para manipular trechos curtos de código.
+
+$h3 Interatividade
+
+$p Para interagir com o interpretador e editor, é recomendado usar um ambiente de desktop. A interface foi testada com Google Chrome (versão 121).
+
+$p Não foram feitos muitos testes de usabilidade num ambiente móvel (em smartphones), e não tenho recursos suficientes para garantir a operação correta nos smartphones mais populares.
+
+$h3 Como escrever Python nesta página
+
+$p Na parte inferior da página está o interpretador interativo de Python. Os três sinais de "maior que" <code> >>> </code> indicam que o interpretador está pronto para receber seu código.
+
+$p Experimente clicar na janela preta abaixo, e digite <code>1 + 2</code>. Para pedir que o interpretador avalie (isto é, produza um valor para) esta expressão, tecle <code>Enter</code> (também chamado de <code>Return</code>).
+
+$p Você verá o resultado, <code>3</code>, numa linha abaixo.
+
+$p No conteúdo deste livro, haverão blocos editáveis de código, que terão esta aparência:
+
+@py
+maçãs = 10
+bananas = 15
+
+print(maçãs + bananas)
+@endpy
+
+$p Clique dentro desse editor para ativar o cursor. Com o cursor dentro do editor, segure <code>Shift</code> e tecle <code>Enter</code> (também chamado de <code>Return</code>) para enviar este código ao interpretador. Esta combinação é frequentemente escrita <code>Shift + Enter</code>.
+
+$p Se preferir, clicando no botão amarelo <strong>Avalie</strong> terá o mesmo efeito.
+
+$p Para pular imediatamente ao interpretador após avaliar o código, tecle <code>Ctrl + Enter</code>.
+
+$p Os blocos contém código independentes, mas uma vez enviada ao interpretador, as definições anteriores permanecerão no interpretador. (Observe que reutilizei a variável <code>bananas</code> do primeiro bloco, e se esse segundo bloco for avaliado primeiro, o interpretador dirá que <code>bananas</code> não foi definido).
+
+@py
+jabuticabas = 100
+
+print(bananas + jabuticabas)
+@endpy
+
+$p Você poderá fazer alterações ao código, e quando terminar, tecle <code>Shift + Enter</code> ou <code>Ctrl + Enter</code> para que o interpretador se atualize.
