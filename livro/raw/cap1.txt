@@ -29,12 +29,12 @@ $p O nome da função vem primeiro, seguido por uma parêntese esquerda, o valor
 $p O que acontece se temos mais de um argumento? Os separamos com vírgulas:
 
 @py
-print("Comprei leite e biscoitos por", 7 + 3, "reais.")
+print("Pão e café são", 1 + 2, "reais.")
 @end
 
 $p Avalie essa linha de código seguindo o mesmo procedimento de antes.
 
-$p Reparou que Python calculou sozinho a soma de <code>7 + 3</code> na saída? Argumentos são avaliados (simplificados o máximo possível, seguindo regras aplicáveis a esse tipo de valor), e em seguida, passados à função.
+$p Reparou que Python calculou sozinho a soma de <code>1 + 2</code> na saída? Argumentos são avaliados (reduzidos ao valor mais simples possível, seguindo as regras para esse tipo de valor), e em seguida, passados à função.
 
 $p Quando <code>print</code> recebe vários argumentos, todos eles aparecerão na mesma linha, separados por um espaço.
 
