@@ -51,4 +51,4 @@ jabuticabas = 100
 print(bananas + jabuticabas)
 @endpy
 
-$p Você poderá fazer alterações ao código, e quando terminar, tecle <code>Shift + Enter</code> ou <code>Ctrl + Enter</code> para que o interpretador se atualize.
+$p Você poderá fazer alterações no código, e quando terminar, tecle <code>Shift + Enter</code> ou <code>Ctrl + Enter</code> para que o interpretador se atualize.

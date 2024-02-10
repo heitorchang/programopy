@@ -1,4 +1,6 @@
 # Convert files in raw/ to this directory
+# Run:
+# python3 convert_markup.py
 
 """
 The format is:
@@ -102,6 +104,7 @@ def generate_chapter_links(current_chapter):
     '''
 
 def convert_raw(raw_filename):
+    print("Converting raw file", raw_filename)
     filename_only = raw_filename.split('/')[-1].replace('.txt', '.html')
     chapter_number = int(filename_only[3:filename_only.find('.')])
     chapter_links = generate_chapter_links(chapter_number)
@@ -124,3 +127,7 @@ def convert_raw(raw_filename):
                 py_block.append(raw_line)
         print(chapter_links, file=converted_file)
         print(FOOTER, file=converted_file)
+
+if __name__ == '__main__':
+    convert_raw('raw/cap0.txt')
+    convert_raw('raw/cap1.txt')
