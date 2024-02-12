@@ -1,5 +1,6 @@
 Note: cm is codemirror
 
+[  ] increase size of bottom padding to see if search bug (search and item found is behind the terminal) is circumvented
 [  ] python interface to draw on a js canvas (but how to replicate in an IDE? matplotlib?)
 [  ] no tag in markup (outside blocks) means <p>
 [  ] replace time id with incrementing (to avoid having to commit new ids to git all the time)
