@@ -1,20 +1,28 @@
-Note: cm is codemirror
+Todo
+----
+[  ]
 
-
-[  ] increase size of bottom padding to see if search bug (search and item found is behind the terminal) is circumvented
-[  ] python interface to draw on a js canvas (but how to replicate in an IDE? matplotlib?)
-[  ] no tag in markup (outside blocks) means <p>
-[  ] replace time id with incrementing (to avoid having to commit new ids to git all the time)
-[  ] non-greedy regex to replace backticked code with <code></code>
-[  ] remove "terá que instalar python from cap3 because thonny does not need it
-[  ] store terminal state in window.localStorage
 
 To explain later
 ----------------
 [  ] how to format strings with f-strings (Formate suas strings)
 
+
+Done
+----
 [OK] generate table of contents dynamically
 [OK] create pseudo markup with single lines becoming <p>, replacing " & " with &amp; " < " with &lt; " > " with &gt;. Placing #py by itself in a line marks the beginning of a textarea block, and the block ends with #endpy. The textarea should have an id of "filename_n" where n is an integer counter. Add a button to evaluate the textarea given the same id.
 [OK] favicon.ico
-[OK] padding for cm editor
+[OK] padding for cm (CodeMirror) editor
 [OK] see if now that pages are static, the cm settimeout can be removed
+[NO] increase size of bottom padding to see if search bug (search and item found is behind the terminal) is circumvented. NO: decided to make terminal transparent
+[NO] python interface to draw on a js canvas (but how to replicate in an IDE? matplotlib?). NO: cannot easily replicate for IDE users
+[OK] no tag in markup (outside blocks) means <p>
+[OK] replace time id with incrementing (to avoid having to commit new ids to git all the time)
+[OK] non-greedy regex to replace backticked code with <code></code>
+[OK] remove "terá que instalar python from cap3 because thonny does not need it
+[NO] store terminal state in window.localStorage. NO: Cannot save functions easily.
+
+scratch
+-------
+let indexURL = "https://heitorchang.github.io/programopy/livro/pyodide-core/";

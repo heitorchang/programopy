@@ -3,7 +3,6 @@
 const cm_instances = new Map();
 
 async function main() {
-  // let indexURL = my_host + "livro/pyodide-core/";
   let indexURL = "https://heitorchang.github.io/programopy/livro/pyodide-core/";
   const urlParams = new URLSearchParams(window.location.search);
   const buildParam = urlParams.get("build");
@@ -166,6 +165,8 @@ async function main() {
     term.error(s.trimEnd());
   };
   term.ready = Promise.resolve();
+
+  // terminal is ready
   $("#loading").hide();
   $("#content").show();
   $("#terminal-control").show();
@@ -224,16 +225,24 @@ function sendToInterpreter(py, switch_focus) {
   const lines = py.split(/\r?\n|\r|\n/g);
   let current_line = '';
   let current_block = '';
+  let in_multiline_string = false;
 
   for (let i = 0; i < lines.length; i++) {
     current_line = lines[i];
+    if (current_line.includes('"""') || current_line.includes("'''")) {
+      in_multiline_string = !in_multiline_string
+    }
     // replace tabs with 4 spaces
     current_line = current_line.replaceAll('\t', '    ');
     if (i > 0 && current_line.substring(0, 1) !== ' ') {
       logical_blocks.push(current_block);
       current_block = '';
     }
-    current_block += current_line + '\n';
+    current_block += current_line;
+
+    if (!in_multiline_string) {
+      current_block += '\n';
+    }
   }
 
   // add whatever remains

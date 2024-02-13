@@ -18,6 +18,4 @@ $p Entre todos os IDEs que conheço, recomendo três:
 
 $p Os dois primeiros são usados por profissionais, e o último foi projetado numa universidade sobretudo para principiantes.
 
-$p Além de instalar o IDE, você terá que <a href="https://python.org/" target="_blank">instalar Python</a> no seu computador se ele já não estiver presente.
-
 $p Siga instruções online caso algo não funcionar. Infelizmente, não sou capaz de oferecer soluções para todo tipo de configuração.

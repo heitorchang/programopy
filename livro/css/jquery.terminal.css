@@ -75,7 +75,7 @@
     left: 0;
     width: 100%;
     line-height: initial;
-    --base-background: var(--background, #000);
+    --base-background: var(--background, rgba(60, 60, 60, 0.2));
     --base-color: var(--color);
     contain: content;
 }
@@ -757,8 +757,8 @@ terminal .terminal-output > div {
 
 .terminal .terminal-output > :not(.raw) .terminal-error,
 .terminal .terminal-output > :not(.raw) .terminal-error * {
-    color: red;
-    color: var(--error-color, red);
+    color: #c32;
+    color: var(--error-color, #c32);
 }
 .tilda {
     position: fixed;
@@ -792,6 +792,7 @@ terminal .terminal-output > div {
 }
 .terminal-scroller, .terminal .terminal-fill, .cmd-editable {
     padding: calc(1px * var(--padding, 10) / var(--pixel-density, 1));
+    background-color: rgba(10, 20, 90, 0.8);
 }
 .cmd-editable {
     padding-top: 0;
@@ -802,7 +803,7 @@ terminal .terminal-output > div {
 }
 .terminal .terminal-output > :not(.raw) .terminal-error,
 .terminal .terminal-output > :not(.raw) .terminal-error * {
-    --color: var(--error-color, red);
+    --color: var(--error-color, #700);
     text-shadow: 0 0 calc(var(--glow) * 5px) var(--color);
 }
 .terminal .terminal-output > :not(.raw) a[href] {
@@ -825,7 +826,7 @@ terminal .terminal-output > div {
     .terminal.external [data-text],
     .cmd div {
         color: var(--color, #aaa);
-        background-color: var(--background, #000);
+        background-color: var(--background, rgba(60, 60, 60, 0.5));
     }
     .terminal [data-text], .cmd [data-text] {
         /* conditionals: https://www.kizu.ru/conditions-for-css-variables/ */
@@ -854,11 +855,6 @@ terminal .terminal-output > div {
     }
     .cmd .clipboard {
         top: calc(var(--size, 1) * (14 / var(--pixel-density, 1)) * var(--cursor-line, 0) * 1px);
-    }
-    .terminal .inverted, .cmd.cmd.cmd .inverted, .cmd.cmd.cmd .cmd-inverted {
-        --background: #000;
-        background-color: var(--color, #aaa) !important;
-        color: var(--background, #000) !important;
     }
     .cmd .cmd-cursor.cmd-blink {
         color: var(--color, #aaa);
@@ -900,7 +896,7 @@ terminal .terminal-output > div {
     .terminal .terminal-output .raw div::-moz-selection,
     .cmd span[data-text]:not(.far):not(.fa):not(.fas):not(.emoji) span::-moz-selection {
         background-color: var(--color, #aaa);
-        color: var(--background, #000);
+        color: var(--background, rgba(50, 50, 50, 0.5));
     }
     .terminal .terminal-output div div a::-moz-selection {
         background-color: var(--link-color, rgba(15, 96, 255, 0.99)) !important;
@@ -943,10 +939,11 @@ terminal .terminal-output > div {
   inherits: true;
   initial-value: rgba(170, 170, 170, 0.99);
 }
+/* transparent terminal */
 @property --background {
   syntax: '<color>';
   inherits: true;
-  initial-value: #000;
+  initial-value: rgba(50, 50, 50, 0.5);
 }
 @property --link-color {
   syntax: '<color>';
