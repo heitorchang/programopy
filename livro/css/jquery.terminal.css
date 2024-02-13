@@ -792,7 +792,7 @@ terminal .terminal-output > div {
 }
 .terminal-scroller, .terminal .terminal-fill, .cmd-editable {
     padding: calc(1px * var(--padding, 10) / var(--pixel-density, 1));
-    background-color: rgba(10, 20, 90, 0.8);
+    background-color: rgba(10, 20, 90, 0.88);
 }
 .cmd-editable {
     padding-top: 0;
