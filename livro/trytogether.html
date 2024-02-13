@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.terminal.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/codemirror_ambiance.css">
+    <link rel="stylesheet" href="css/livro.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <title>Livro - Programo Py</title>
+  </head>
+  <body>
+    <script src="https://togetherjs.com/togetherjs-min.js"></script>
+
+    <div id="loading">&nbsp;</div>
+
+    <div id="content">
+      <div id="chapter">
+<p>
+  <a href="index.html" class="home-link">Índice</a>
+</p>
+
+<h1>Try TogetherJS</h1>
+
+<p>
+  <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+</p>
+
+<p><textarea id="block_17076069628886547">maçãs = 10
+# editor
+
+</textarea>
+<button onclick="sendTextarea('block_17076069628886547', false)">Avalie</button></p>
+
+
+  </div>
+
+  <div id="bottom-padding">&nbsp;</div>
+
+</div>
+
+    <div id="terminal-control" onclick="toggleTerminal()"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.terminal.js"></script>
+    <script src="js/unix_formatting.js"></script>
+    <script src="js/codemirror.js"></script>
+    <script src="js/codemirror_python.js"></script>
+    <script src="js/matchbrackets.js"></script>
+
+    <script src="js/init_codemirror.js"></script>
+    <script src="js/init_pyodide.js"></script>
+  </body>
+</html>
