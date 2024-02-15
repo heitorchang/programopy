@@ -129,11 +129,13 @@ button {
 
 .prev-ch-link {
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .next-ch-link {
     font-weight: bold;
     text-align: right;
+    font-size: 1.2rem;
 }
 
 .home-link {

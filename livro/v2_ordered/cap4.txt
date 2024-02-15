@@ -1,0 +1,7 @@
+$h1 4. Funções
+
+
+
+Uma <b>função</b> aceita valores, faz operações neles, e devolve qualquer número de valores (de zero a astronômico, limitado apenas pela memória do seu computador).
+
+Se os valores

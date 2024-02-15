@@ -1,0 +1,13 @@
+$h1 3. Texto
+
+Você quer manter mais controle sobre sua biblioteca, então decide criar variáveis para se referirem ao nome do autor.
+
+%
+javascript_autor = "Fernando Fagulhas"
+php_autor = "Melissa Macieira"
+c_autor = "Pamela Presciente"
+/
+
+Um valor textual se chama uma <b>string</b>. Valores string começam e terminam com aspas.
+
+Não há diferença escolher entre aspas simples `'programar'` ou aspas duplas `"programar"`. Dentro da string, se tiver que incluir aspas do mesmo tipo, terá que digitar `\` antes das aspas: `"A ilha se chamava \"O Dragão\" antes."`.

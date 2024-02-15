@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.terminal.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/codemirror_ambiance.css">
+    <link rel="stylesheet" href="css/livro.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>Programo Python</title>
+  </head>
+  <body>
+    <div id="loading">&nbsp;</div>
+
+    <div id="content">
+      <div id="chapter">
+<p>
+  <a href="index.html" class="home-link">Índice</a>
+</p>
+
+<h1>2. Texto</h1>
+
+<p>Você quer manter mais controle sobre sua biblioteca, então decide criar variáveis para se referirem ao nome do autor.</p>
+
+javascript_autor = "Fernando Fagulhas"
+php_autor = "Melissa Macieira"
+c_autor = "Pamela Presciente"
+
+<p>Um valor textual se chama uma <b>string</b>. Valores string começam e terminam com aspas.</p>
+
+<p>Não há diferença escolher entre aspas simples <code>'programar'</code> ou aspas duplas <code>"programar"</code>. Dentro da string, se tiver que incluir aspas do mesmo tipo, terá que digitar <code>\</code> antes das aspas: <code>"A ilha se chamava \"O Dragão\" antes."</code>.</p>
+
+
+        <table class="ch-links">
+          <tr>
+            
+            <td class="prev-ch-link">
+              <a href="cap_variaveis.html"> &lt;&lt;&lt; 1. Variáveis</a>
+            </td>
+        
+            
+            <td class="next-ch-link">
+              <a href="cap_programe_agora.html">3. Programe agora mesmo &gt;&gt;&gt; </a>
+            </td>
+        
+          </tr>
+        </table>
+    
+
+  <p>
+    <a href="index.html" class="home-link">Índice</a>
+  </p>
+  </div>
+
+  <div id="bottom-padding">&nbsp;</div>
+
+</div>
+
+    <div id="terminal-control" onclick="toggleTerminal()"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.terminal.js"></script>
+    <script src="js/unix_formatting.js"></script>
+    <script src="js/codemirror.js"></script>
+    <script src="js/codemirror_python.js"></script>
+    <script src="js/matchbrackets.js"></script>
+
+    <script src="js/init_codemirror.js"></script>
+    <script src="js/init_pyodide.js"></script>
+  </body>
+</html>
+
