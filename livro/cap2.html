@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/jquery.terminal.css">
-    <link rel="stylesheet" href="css/codemirror.css">
-    <link rel="stylesheet" href="css/codemirror_ambiance.css">
-    <link rel="stylesheet" href="css/livro.css">
+    <link rel="stylesheet" href="../css/jquery.terminal.css">
+    <link rel="stylesheet" href="../css/codemirror.css">
+    <link rel="stylesheet" href="../css/codemirror_ambiance.css">
+    <link rel="stylesheet" href="../css/livro.css">
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-    <title>Livro - Programo Py</title>
+    <title>PyUp</title>
   </head>
   <body>
     <div id="loading">&nbsp;</div>
@@ -19,41 +19,39 @@
   <a href="index.html" class="home-link">Índice</a>
 </p>
 
-<h1>2. Crie suas próprias funções</h1>
+<h1>2. Variáveis</h1>
 
-<h3>Endentação</h3>
+<p>Além de ler o bom livro de Python, você planeja ler outros livros, sobre <i>JavaScript</i>, <i>PHP</i>, e <i>C</i>.</p>
 
-<p>Sempre que houver dois pontos <code>:</code></p>
+<p>Cada livro tem a quantidade de páginas dada abaixo, e você quer saber quantas páginas você vai ler. Clique no botão amarelo <b>Avalie</b> para executar o código.</p>
 
-<h3>Pedindo pizzas para amigos</h3>
+<p><textarea id="block1">javascript = 520
+php = 428
+c = 922
 
-<p><textarea id="block_17076069635932353">def calcule_total(núm_pizzas, núm_refris):
-    valor_pizza = 50
-    valor_refri = 15
+javascript + php + c</textarea>
+<button onclick="sendTextarea('block1', false)">Evaluate</button></p>
+<p>As primeiras três linhas criam variáveis. Uma <b>variável</b> é um nome que se refere a um valor. Cada nome de linguagem se refere a quantas páginas aquele livro contém.</p>
 
-    return (núm_pizzas * valor_pizza) + (núm_refris * valor_refri)</textarea>
-<button onclick="sendTextarea('block_17076069635932353', false)">Avalie</button></p>
-<p>Python permite caracteres acentuados e até de outros idiomas nos nomes, como <code>π</code>, que podem facilitar a leitura. Mas lembre-se que o nome terá que ser sempre digitado da mesma forma.</p>
+<p>Quando avaliada, uma variável devolve o valor a qual ela se refere. A <b>expressão</b> <code>javascript + php + c</code> é uma combinação de variáveis e o operador <code>+</code>, que faz somas. Essa expressão é igual a <code>520 + 428 + 922</code>, que é <code>1870</code>.</p>
 
-<p><textarea id="block_170760696369351">aprox_π = 3.14
-print(2 * aprox_π)</textarea>
-<button onclick="sendTextarea('block_170760696369351', false)">Avalie</button></p>
-<h3>Comparando números</h3>
+<p>Agora, você quer adicionar o número de páginas do livro de Python. Ele tem <code>870</code>páginas. Clique na caixa preta acima e adicione: <code>python = 870</code>. Altere também a soma, para <code>javascript + php + c + python</code>.</p>
 
-<p><textarea id="block_17076069637938235">total = 105
-print(total > 100)</textarea>
-<button onclick="sendTextarea('block_17076069637938235', false)">Avalie</button></p>
+<p>Finalmente, digite <code>Shift + Enter</code> (segure <code>Shift</code> e tecle <code>Enter</code>). Ou, poderá também clicar no botão <b>Avalie</b>.</p>
+
+<p>Você terá lido <code>2740</code> páginas!</p>
+
 
         <table class="ch-links">
           <tr>
             
             <td class="prev-ch-link">
-              <a href="cap1.html"> &lt;&lt;&lt; 1. Faça contas simples</a>
+              <a href="cap1.html"> &lt;&lt;&lt; 1. Programe agora mesmo</a>
             </td>
         
             
             <td class="next-ch-link">
-              <a href="cap3.html">3. Escolha seu ambiente &gt;&gt;&gt; </a>
+              <a href="cap3.html">3. Funções &gt;&gt;&gt; </a>
             </td>
         
           </tr>
@@ -71,15 +69,15 @@ print(total > 100)</textarea>
 
     <div id="terminal-control" onclick="toggleTerminal()"></div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.terminal.js"></script>
-    <script src="js/unix_formatting.js"></script>
-    <script src="js/codemirror.js"></script>
-    <script src="js/codemirror_python.js"></script>
-    <script src="js/matchbrackets.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.terminal.js"></script>
+    <script src="../js/unix_formatting.js"></script>
+    <script src="../js/codemirror.js"></script>
+    <script src="../js/codemirror_python.js"></script>
+    <script src="../js/matchbrackets.js"></script>
 
-    <script src="js/init_codemirror.js"></script>
-    <script src="js/init_pyodide.js"></script>
+    <script src="../js/init_codemirror.js"></script>
+    <script src="../js/init_pyodide.js"></script>
   </body>
 </html>
 

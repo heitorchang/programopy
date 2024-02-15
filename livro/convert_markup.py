@@ -1,19 +1,134 @@
-# Convert files in raw/ to this directory
-# Run:
-# python3 convert_markup.py
-
 """
-The format is:
-$tagname This entire line gets wrapped in a tag with the tagname
+PyUp: Python markup
 
-@py
-Python code
-More code
-@end
+Description:
+
+Place contents of a single line in a specified HTML tag. Without a tag, <p> is assumed:
+
+$h1 My Cool Page
+
+Contents here.
+
+Text inside backticks `some expression` are converted to <code>some expression</code>.
+
+Blocks can be placed in editors, so they can be evaluated:
+
+@
+def my_function(x):
+    return x * 100
+/
+
+A raw HTML block is marked with %
+
+%
+<table>
+  <tr><td>A</td><td>B</td></tr>
+  <tr><td>10</td><td>20</td></tr>
+</table>
+/
 """
-import time
 
-from chapter_template import HEADER, FOOTER
+import re
+
+
+HEADER = '''<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/jquery.terminal.css">
+    <link rel="stylesheet" href="../css/codemirror.css">
+    <link rel="stylesheet" href="../css/codemirror_ambiance.css">
+    <link rel="stylesheet" href="../css/livro.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <title>PyUp</title>
+  </head>
+  <body>
+    <div id="loading">&nbsp;</div>
+
+    <div id="content">
+      <div id="chapter">
+<p>
+  <a href="index.html" class="home-link">Índice</a>
+</p>
+'''
+
+FOOTER = '''
+  <p>
+    <a href="index.html" class="home-link">Índice</a>
+  </p>
+  </div>
+
+  <div id="bottom-padding">&nbsp;</div>
+
+</div>
+
+    <div id="terminal-control" onclick="toggleTerminal()"></div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.terminal.js"></script>
+    <script src="../js/unix_formatting.js"></script>
+    <script src="../js/codemirror.js"></script>
+    <script src="../js/codemirror_python.js"></script>
+    <script src="../js/matchbrackets.js"></script>
+
+    <script src="../js/init_codemirror.js"></script>
+    <script src="../js/init_pyodide.js"></script>
+  </body>
+</html>
+'''
+
+
+INDEX_TEMPLATE_HEADER = '''
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/livro.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <title>PyUp</title>
+  </head>
+  <body>
+    <div style="text-align: center;">
+    <div style="max-width: 60rem; margin: auto; text-align: left;">
+
+<h1>Programo Python</h1>
+<p>
+por Heitor Chang
+</p>
+'''
+
+
+INDEX_TEMPLATE_FOOTER = '''
+    </div>
+    </div>
+  </body>
+</html>
+'''
+
+
+def generate_index_chapter_link(n):
+    with open(f'raw/cap{n}.txt') as f:
+        for line in f:
+            header = line
+            break
+    n_name = ' '.join(header.split()[1:])
+
+    return f'''
+    <p>
+      <a href="cap{n}.html" class="home-chapter-link">{n_name}</a>
+    </p>
+    '''
+
+
+def generate_index(start_chapter, end_chapter):
+    print(f"Generating index")
+    with open(f"index.html", 'w') as index_f:
+        print(INDEX_TEMPLATE_HEADER, file=index_f)
+        for i in range(start_chapter, end_chapter + 1):
+            print(generate_index_chapter_link(i), file=index_f)
+        print(INDEX_TEMPLATE_FOOTER, file=index_f)
 
 
 def replace_html_special_chars(line):
@@ -22,38 +137,35 @@ def replace_html_special_chars(line):
     line = line.replace(" < ", " &lt; ")
     line = line.replace(" > ", " &gt; ")
     line = line.replace(" & ", " &amp; ")
-
     return line
 
 
-def tagify(line, chapter_number):
-    """Wrap the line inside a tag with the given tagname.
-    $tagname My content
-    => <tagname>My content</tagname>
-    """
-    if line[0] == '$':
-        tagname, *rest = line.split()
-        tagname = tagname[1:]  # remove initial $
-        chapter_label = ""
-        if tagname == 'h1':
-            chapter_label = str(chapter_number) + '. '
-        return f"<{tagname}>{chapter_label}{replace_html_special_chars(' '.join(rest))}</{tagname}>"
-    raise ValueError("Line must start with $ to tagify it.")
+def convert_line(line):
+    if line[0] != '$':
+        line = '$p ' + line
+    tagname, *rest = line.split()
+    tagname = tagname[1:]  # remove initial $
+    backtick_template = re.compile(r'`([^`]*?)`')
+    contents = replace_html_special_chars(' '.join(rest))
+    contents = re.sub(backtick_template, r'<code>\1</code>', contents)
+    return f"<{tagname}>{contents}</{tagname}>"
 
 
-def generate_time_based_id():
-    time.sleep(0.1)
-    return "block_" + str(time.time()).replace(".", "")
+BLOCK_ID = 0
+def generate_incrementing_id():
+    global BLOCK_ID
+    BLOCK_ID += 1
+    return f'block{BLOCK_ID}'
 
 
 def wrap_py_block(lines):
-    textarea_id = generate_time_based_id()
+    textarea_id = generate_incrementing_id()
     textarea_contents = ''
     textarea_contents += f'''<p><textarea id="{textarea_id}">'''
     for line in lines:
         textarea_contents += line
     textarea_contents = textarea_contents[:-1]  # remove final newline
-    textarea_contents += f'''</textarea>\n<button onclick="sendTextarea('{textarea_id}', false)">Avalie</button></p>'''
+    textarea_contents += f'''</textarea>\n<button onclick="sendTextarea('{textarea_id}', false)">Evaluate</button></p>'''
 
     return textarea_contents
 
@@ -86,14 +198,14 @@ def generate_chapter_links(current_chapter):
     if prev_name:
         prev_link = f'''
             <td class="prev-ch-link">
-              <a href="cap{prev_chapter}.html"> &lt;&lt;&lt; {prev_chapter}. {prev_name}</a>
+              <a href="cap{prev_chapter}.html"> &lt;&lt;&lt; {prev_name}</a>
             </td>
         '''
 
     if next_name:
         next_link = f'''
             <td class="next-ch-link">
-              <a href="cap{next_chapter}.html">{next_chapter}. {next_name} &gt;&gt;&gt; </a>
+              <a href="cap{next_chapter}.html">{next_name} &gt;&gt;&gt; </a>
             </td>
         '''
 
@@ -106,8 +218,10 @@ def generate_chapter_links(current_chapter):
         </table>
     '''
 
+
 def convert_raw(raw_filename):
     print("Converting raw file", raw_filename)
+    destination_filename = raw_filename.replace('raw/', '').replace('.txt', '.html')
     filename_only = raw_filename.split('/')[-1].replace('.txt', '.html')
     chapter_number = int(filename_only[3:filename_only.find('.')])
     chapter_links = generate_chapter_links(chapter_number)
@@ -116,97 +230,47 @@ def convert_raw(raw_filename):
 
     in_html_block = False
     html_block = []
-    with open(raw_filename) as raw_file, open(filename_only, 'w') as converted_file:
+    with open(raw_filename) as raw_file, open(destination_filename, 'w') as converted_file:
         print(HEADER, file=converted_file)
         for raw_line in raw_file:
+            if raw_line.strip() == "" and not in_py_block and not in_html_block:
+                continue
+            if raw_line[0] not in "$@%/" and not in_py_block and not in_html_block:
+                raw_line = "$p " + raw_line
             if raw_line[0] == '$':
-                print(tagify(raw_line, chapter_number), file=converted_file)
+                print(convert_line(raw_line), file=converted_file)
                 print(file=converted_file)
-            elif raw_line.startswith("@py"):
+            elif raw_line.startswith("@"):
                 in_py_block = True
-            elif raw_line.startswith("@end"):
-                print(wrap_py_block(py_block), file=converted_file)
-                py_block = []
-                in_py_block = False
+            elif raw_line.startswith("/"):
+                if in_py_block:
+                    print(wrap_py_block(py_block), file=converted_file)
+                    py_block = []
+                    in_py_block = False
+                elif in_html_block:
+                    print(''.join(html_block), file=converted_file)
+                    html_block = []
+                    in_html_block = False
             elif in_py_block:
                 py_block.append(raw_line)
-            elif raw_line.startswith("!html"):
+            elif raw_line.startswith("%"):
                 in_html_block = True
-            elif raw_line.startswith("!end"):
-                print('\n'.join(html_block), file=converted_file)
-                html_block = []
-                in_html_block = False
             elif in_html_block:
-                html_block.append(raw_line)
+                html_block.append(replace_html_special_chars(raw_line))
         print(chapter_links, file=converted_file)
         print(FOOTER, file=converted_file)
 
 
-# index.html
-INDEX_TEMPLATE = '''
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/livro.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-    <title>Livro - Programo Py</title>
-  </head>
-  <body>
-    <div style="text-align: center;">
-    <div style="max-width: 60rem; margin: auto; text-align: left;">
-      <h1>Programo Python</h1>
-      <p>
-        Um livro interativo para aprender a programar em Python
-      </p>
-
-      <p>
-        <em>por Heitor Chang</em>
-      </p>
-
-      <p>
-        <br>
-      </p>
-'''
-
-
-INDEX_TEMPLATE_FOOTER = '''
-<p>
-<a href="creditos.html">Créditos</a>
-</p>
-    </div>
-    </div>
-  </body>
-</html>
-'''
-
-def generate_index_chapter_link(n):
-    with open(f'raw/cap{n}.txt') as f:
-        for line in f:
-            header = line
-            break
-    n_name = ' '.join(header.split()[1:])
-
-    return f'''
-    <p>
-    <a href="cap{n}.html" class="home-chapter-link">{n}. {n_name}</a>
-    </p>
-    '''
-
-def generate_index(start_chapter, end_chapter):
-    print("Generating index.")
-    with open("index.html", 'w') as index_f:
-        print(INDEX_TEMPLATE, file=index_f)
-        for i in range(start_chapter, end_chapter + 1):
-            print(generate_index_chapter_link(i), file=index_f)
-        print(INDEX_TEMPLATE_FOOTER, file=index_f)
-
-
 if __name__ == '__main__':
-    chapter_start = 0
-    chapter_end = 3
-    generate_index(chapter_start, chapter_end)
+    ch_start = 1
+    ch_end = 4
 
-    for i in range(chapter_start, chapter_end + 1):
+    print()
+    print(f"Converting chapters {ch_start} to {ch_end}.")
+    print("Edit these values directly in the script.")
+    print()
+
+    generate_index(ch_start, ch_end)
+
+    for i in range(ch_start, ch_end+1):
         convert_raw(f'raw/cap{i}.txt')

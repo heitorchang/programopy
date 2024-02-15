@@ -1,0 +1,88 @@
+$h1 Faça contas simples
+
+$h3 Olá, mundo!
+
+$p É praticamente obrigatório começar um livro introdutório com um programa que exiba a famosa frase
+
+$p <code>Hello, world!</code>.
+
+$p Com o interpretador Python já inicializado, basta chamar (em outras palavras, pedir para o interpretador rodar) a função <code>print</code>
+
+@py
+print("Olá, mundo!")
+@end
+
+$p Clique no botão amarelo <strong>Avalie</strong>, ou clique dentro da caixa escura e digite <code>Shift + Enter</code>. O interpretador na parte baixa da página exibirá o texto <code>Olá, mundo!</code>.
+
+$p Esses blocos de código são editáveis. Experimente trocar <code>mundo</code> por <code>Guido</code>, e repita a avaliação do código.
+
+$h3 Chamando funções
+
+$p Uma função executa uma sequência de operações, e pode agir em qualquer número de valores passados a ela. Um valor que é passado a uma função é chamado de <strong>argumento</strong>.
+
+$p No bloco de código acima, a palavra <code>print</code> é o nome de uma função embutida (já definida e incluída ao iniciar o interpretador). Essa função exibe uma representação legível dos valores que recebeu.
+
+$p Para chamar uma função, é preciso saber quais valores passar à função. Nesse caso, a função é <code>print</code> e o valor é <code>"Olá, mundo!"</code>.
+
+$p O nome da função vem primeiro, seguido por uma parêntese esquerda, o valor, e uma parêntese direita.
+
+$p O que acontece se temos mais de um argumento? Os separamos com vírgulas:
+
+@py
+print("Pão e café são", 1 + 2, "reais.")
+@end
+
+$p Avalie essa linha de código seguindo o mesmo procedimento de antes.
+
+$p Reparou que Python calculou sozinho a soma de <code>1 + 2</code> na saída? Argumentos são avaliados (reduzidos ao valor mais simples possível, seguindo as regras para esse tipo de valor), e em seguida, passados à função.
+
+$p Quando <code>print</code> recebe vários argumentos, todos eles aparecerão na mesma linha, separados por um espaço.
+
+$h3 Strings
+
+$p Repare também que não há aspas na saída do interpretador, mas que elas são necessárias na hora de chamar <code>print</code>.
+
+$p As aspas indicam o começo e fim de uma <strong>string</strong> (uma sequência de caracteres), mas o valor intrínsico da string não incluem essas aspas, apenas os caracteres <code>Olá, mundo!</code>. Por isso, o interpretador exibe apenas <code>Olá, mundo!</code>.
+
+$p Não há diferença escolher entre aspas simples <code>'</code> ou aspas duplas <code>"</code> para demarcar suas strings. Você poderá incluir aspas do outro tipo livremente dentro da sua string.
+
+$p Se você precisa incluir aspas do mesmo tipo das pontas do string, é necessário colocar uma barra invertida antes das aspas. Por exemplo:
+
+@py
+print("Esse robô se chama \"PY-001\". É lindo, não é?")
+@end
+
+$h3 Números
+
+$p Atrás das abstrações que te permitem a ler esta frase, computadores processam milhões, ou bilhões de números. Com Python, você pode facilmente manipular todos os tipos de números que estamos acostumados a usar, incluindo formatos científicos e de linguagem de máquina (como em binário e hexadecimal).
+
+$p O exemplo abaixo mostra como calcular a média de três notas. Clique dentro da caixa, e em seguida tecle <code>Shift + Enter</code> (ou clique no botão amarelo, <strong>Avalie</strong>). Você verá o resultado no interpretador, <code>8.466...</code>.
+
+@py
+(9.6 + 8.2 + 7.6) / 3
+@end
+
+!html
+<ul>
+<li>+ soma</li>
+<li>- diferença</li>
+</ul>
+!end
+
+$h3 Variáveis
+
+$p Uma <strong>variável</strong> é um nome (como <code>dólares</code>) que se refere a um valor. Neste capítulo, consideraremos apenas valores numéricos.
+
+$p Mais pra frente, falarei sobre valores que contém texto, objetos que contêm outros objetos, e até objetos customizados por você.
+
+$p No último capítulo criei três variáveis com nomes de frutas e somei-as. Vamos usar um outro exemplo: quanto vale uma quantia de reais em dólares?
+
+@py
+reais = 1000
+taxa_de_câmbio = 4.96
+dólares = reais / taxa_de_câmbio
+
+print("Terei $", dólares)
+@end
+
+$p O valor é aproximadamente <code>$ 201.61</code>. Veremos como formatar esse valor mais adiante.

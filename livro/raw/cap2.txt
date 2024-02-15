@@ -1,29 +1,23 @@
-$h1 Crie suas próprias funções
+$h1 2. Variáveis
 
-$h3 Endentação
+Além de ler o bom livro de Python, você planeja ler outros livros, sobre <i>JavaScript</i>, <i>PHP</i>, e <i>C</i>.
 
-$p Sempre que houver dois pontos <code>:</code>
+Cada livro tem a quantidade de páginas dada abaixo, e você quer saber quantas páginas você vai ler. Clique no botão amarelo <b>Avalie</b> para executar o código.
 
-$h3 Pedindo pizzas para amigos
+@
+javascript = 520
+php = 428
+c = 922
 
-@py
-def calcule_total(núm_pizzas, núm_refris):
-    valor_pizza = 50
-    valor_refri = 15
+javascript + php + c
+/
 
-    return (núm_pizzas * valor_pizza) + (núm_refris * valor_refri)
-@endpy
+As primeiras três linhas criam variáveis. Uma <b>variável</b> é um nome que se refere a um valor. Cada nome de linguagem se refere a quantas páginas aquele livro contém.
 
-$p Python permite caracteres acentuados e até de outros idiomas nos nomes, como <code>π</code>, que podem facilitar a leitura. Mas lembre-se que o nome terá que ser sempre digitado da mesma forma.
+Quando avaliada, uma variável devolve o valor a qual ela se refere. A <b>expressão</b> `javascript + php + c` é uma combinação de variáveis e o operador `+`, que faz somas. Essa expressão é igual a `520 + 428 + 922`, que é `1870`.
 
-@py
-aprox_π = 3.14
-print(2 * aprox_π)
-@end
+Agora, você quer adicionar o número de páginas do livro de Python. Ele tem `870`páginas. Clique na caixa preta acima e adicione: `python = 870`. Altere também a soma, para `javascript + php + c + python`.
 
-$h3 Comparando números
+Finalmente, digite `Shift + Enter` (segure `Shift` e tecle `Enter`). Ou, poderá também clicar no botão <b>Avalie</b>.
 
-@py
-total = 105
-print(total > 100)
-@end
+Você terá lido `2740` páginas!
