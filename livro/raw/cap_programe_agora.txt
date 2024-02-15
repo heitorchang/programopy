@@ -4,14 +4,12 @@ $h3 Python no seu navegador
 
 Este site inclue um ambiente interativo para executar código Python.
 
-Uso exemplos simples e sua participação para transmitir conceitos em poucas palavras.
+Para iniciar (nada de <i>"Olá, mundo!"</i> por aqui), experimente usar o interpretador como uma calculadora.
 
-Existe um bom livro de Python com `870` páginas, e você quer terminá-lo em `30` dias.
+Existe um bom (e pesado) livro de Python com `870` páginas, e você quer terminá-lo em `30` dias.
 
 Quantas páginas você teria que ler por dia?
 
-Experimente digitar `870 / 30` seguido de `Enter` no interpretador abaixo e terá a resposta: `29` páginas.
+Digite `870 / 30` seguido de `Enter` no interpretador abaixo e terá a resposta: `29` páginas.
 
 O <b>interpretador</b> lê trechos de código e os <b>avalia</b>, ou seja, produz um resultado.
-
-Para multiplicar dois números, use `*`. Por exemplo, `3 * 4`.

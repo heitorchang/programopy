@@ -1,8 +1,8 @@
 $h1 Variáveis
 
-Além de ler o bom livro de Python, você planeja ler outros livros, sobre <i>JavaScript</i>, <i>PHP</i>, e <i>C</i>.
+Além de ler o bom livro de Python, você quer ler outros livros, sobre <i>JavaScript</i>, <i>PHP</i>, e <i>C</i>.
 
-Cada livro tem a quantidade de páginas dada abaixo, e você quer saber quantas páginas você vai ler. Clique no botão amarelo <b>Avalie</b> para executar o código.
+Cada livro tem a quantidade de páginas dada abaixo, e você quer saber quantas páginas você tem para ler. Clique no botão amarelo <b>Avalie</b> para executar o código.
 
 @
 javascript = 520

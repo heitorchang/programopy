@@ -262,9 +262,11 @@ def convert_raw(cur, prev, nxt, idx):
 
 if __name__ == '__main__':
     chapters = [
+        'cap_programe_agora',
         'cap_variaveis',
         'cap_texto',
-        'cap_programe_agora',
+        'cap_funcoes',
+        'cap_ambiente_de_desenvolvimento',
     ]
 
     print()

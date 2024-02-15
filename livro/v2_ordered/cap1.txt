@@ -13,5 +13,3 @@ Quantas páginas você teria que ler por dia?
 Experimente digitar `870 / 30` seguido de `Enter` no interpretador abaixo e terá a resposta: `29` páginas.
 
 O <b>interpretador</b> lê trechos de código e os <b>avalia</b>, ou seja, produz um resultado.
-
-Para multiplicar dois números, use `*`. Por exemplo, `3 * 4`.

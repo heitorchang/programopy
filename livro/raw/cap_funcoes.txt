@@ -1,0 +1,38 @@
+$h1 Funções
+
+Para explicar o que são todas essas variáveis, você pensa juntar a informação numa string só. O operador `+`, quando usado em strings, junta eles.
+
+@
+título = "Bits e Bytes no Século XXI"
+autora = "Beatriz Belladonna"
+avaliação = "Gostei do livro '" + título + "' de " + autora
+
+avaliação
+/
+
+Repare que é um pouco entediante ter que criar variáveis novas para cada livro. E se você quiser mudar a string, teria que mudar <i>todas</i> elas.
+
+Uma <b>função</b> aceita valores, faz operações neles, e devolve qualquer número de valores (de zero a números astronômicos, limitado apenas pela memória do seu computador).
+
+Se os valores como números e texto são <i>substantivos</i>, funções são como <i>verbos</i> que agem sobre os valores.
+
+A <b>definição</b> de uma função começa com a palavra-chave <b>def</b>, seguido pelo nome dela.
+
+A lista de valores que ela deve aceitar vem entre parênteses.
+
+Finalmente, escreva o sinal de "dois pontos" `:`.
+
+`def faça_algo(coisa, valor):`
+
+O <i>corpo</i> da função precisa ser <b>endentado</b>. Isso quer dizer que toda linha do corpo deve começar com <i>quatro espaços</i>. Os quatro espaços são um <b>nível de endentação</b>. A cada nível, quatro espaços a mais devem ser adicionados.
+
+@
+def avalie_livro(título, autor, sensação):
+    return sensação + " o livro '" + título + "' de " + autor
+/
+
+Após definir uma função, ela pode ser <b>chamada</b>. Para chamar uma função, escreva o nome, seguido pela lista de valores passados a ela (esses valores são chamados de <b>argumentos</b>).
+
+@
+avalie_livro("Hábitos de Programação", "Carlito Castañeda", "Odiei")
+/
