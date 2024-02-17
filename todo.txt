@@ -1,11 +1,40 @@
 Todo
 ----
-[  ]
+[  ] redo initial chapters with travel examples. foreign exch conversion, days in hotel, discount, country/city name as strings. "My first stop is..."
 
 
-To explain later
+Chapters to write
+-----------------
+[  ] Data e hora: datetime
+[  ] listas
+[  ] variaveis para colecoes (mutaveis)
+[  ] dicionarios
+[  ] conjuntos
+[  ] tuplas
+[  ] classes
+[  ] endentacao de blocos
+[  ] arquivos (note: file stays while page is active, disappears on reload)
+[  ] f-strings, multiline (formate suas strings)
+[  ] recursao (max rec depth stops the function)
+[  ] Booleanos, condicoes (? check other sources) if, while
+[  ] decoradores
+[  ] iteradores
+[  ] lambda
+[  ] glossary entries (see below)
+
+
+Glossary entries
 ----------------
-[  ] how to format strings with f-strings (Formate suas strings)
+Load a global dictionary so clicking on a technical term opens a small window with the definition. Line up the window so it appears above the word.
+
+? glossary entry (variable)
+! definition (a name that refers to a #value# (hyperlink), ex. `username`)
+! more paragraphs
+@ source of definition (Python for All, 2.3)
+
+? another entry
+! another definition
+@ another source
 
 
 Done

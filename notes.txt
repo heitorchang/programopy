@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/43072149/do-datetime-objects-need-to-be-deep-copied
+
+All assignments in Python are references. No copying is ever done on assignment.
+
+If you have the ability to mutate the object then any mutation will naturally affect all the references to that object.
+
+The only reason you don't see this with integers or strings in your original code is that you're not mutating the objects, you're simply reassigning. Integers and strings, as well as datetimes, don't have any way of being mutated, so the only thing you can do is reassign them.
