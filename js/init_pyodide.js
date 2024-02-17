@@ -229,9 +229,9 @@ function sendToInterpreter(py, switch_focus) {
 
   for (let i = 0; i < lines.length; i++) {
     current_line = lines[i];
-    if (current_line.includes('"""') || current_line.includes("'''")) {
-      in_multiline_string = !in_multiline_string
-    }
+    // if (current_line.includes('"""') || current_line.includes("'''")) {
+    //   in_multiline_string = !in_multiline_string
+    // }
     // replace tabs with 4 spaces
     current_line = current_line.replaceAll('\t', '    ');
     if (i > 0 && current_line.substring(0, 1) !== ' ') {

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.terminal.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/codemirror_ambiance.css">
+    <link rel="stylesheet" href="css/livro.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>Programo Python</title>
+  </head>
+  <body>
+    <div id="loading">&nbsp;</div>
+
+    <div id="content">
+      <div id="chapter">
+<p>
+  <a href="index.html" class="home-link">Índice</a>
+</p>
+
+<h1>JS Canvas</h1>
+
+<p>
+  <canvas id="canvas" width="500" height="500"></canvas>
+</p>
+
+
+  <div id="bottom-padding">&nbsp;</div>
+
+</div>
+
+    <div id="terminal-control" onclick="toggleTerminal()"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.terminal.js"></script>
+    <script src="js/unix_formatting.js"></script>
+    <script src="js/codemirror.js"></script>
+    <script src="js/codemirror_python.js"></script>
+    <script src="js/matchbrackets.js"></script>
+
+    <script src="js/init_codemirror.js"></script>
+    <script src="js/init_pyodide.js"></script>
+
+    <script>
+    const canvas = document.getElementById("canvas");
+
+    const context = canvas.getContext("2d");
+
+    context.fillRect(10, 10, 40, 40);
+
+function createCustomFunctions() {
+    pyodide.runPython(`
+import js
+doc = js.document
+canvas = doc.getElementById("canvas")
+context = canvas.getContext("2d")
+
+def callFillRect(x, y, w, h):
+    print("callFillRect", x, y)
+    context.fillRect(x, y, w, h)
+    `);
+}
+
+console.log("Call createCustomFunctions() after Pyodide loads.");
+    </script>
+  </body>
+</html>
