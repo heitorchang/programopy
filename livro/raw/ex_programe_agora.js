@@ -1,3 +1,8 @@
+function initGlobals() {
+  // use "pyodide.runPython(`...`);" to run Python code
+}
+
+
 function handleExercises() {
   const lastTermValue = termEchoLog[termEchoLog.length - 1];
   if (lastTermValue === '103') {

@@ -196,8 +196,6 @@ def clear_console():
   pyodide.runPython(`
 print_log = ["---STATEMENT---"]
 
-greeting = "Happy Birthday to Me!!"  # experimental page, cakeCandles
-
 def tritest(*args):
     """
     Given triples of trial values, expected values, and error messages, check if in each triple, the trial value
@@ -232,8 +230,9 @@ orig_print = print
 # Attach custom behavior to print()
 def print(*args, **kwargs):
     print_log.extend(args)
-    orig_print(*args, **kwargs)
-    `);
+    orig_print(*args, **kwargs)`);
+
+  initGlobals();
 
   pyodide._api.on_fatal = async (e) => {
     if (e.name === "Exit") {

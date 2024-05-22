@@ -32,7 +32,9 @@ An exercise block is marked as
 </p>
 /
 
-And the exercises handler should be placed in the file ex_chapter_name.js, excluding <script> tags, but naming the function "handleExercises"
+And the exercises handler should be placed in the file ex_chapter_name.js, excluding <script> tags, but naming the function "handleExercises()".
+
+A function named "initGlobals()" is also mandatory, even if empty.
 """
 
 import re
