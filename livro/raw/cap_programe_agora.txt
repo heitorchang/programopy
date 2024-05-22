@@ -2,14 +2,26 @@ $h1 Programe agora mesmo
 
 $h3 Python no seu navegador
 
-Este site inclue um ambiente interativo para executar código Python.
+Este site inclue um <em>interpretador</em> que executa seu código.
 
-Para iniciar (nada de <i>"Olá, mundo!"</i> por aqui), experimente usar o interpretador como uma calculadora.
+Para começar, experimente usá-lo como uma calculadora.
 
-Existe um bom (e pesado) livro de Python com `870` páginas, e você quer terminá-lo em `30` dias.
+%
+<p id="exCalc" class="exercise">
+  Clique na janela azul-escuro abaixo, digite o cálculo, <code>12 + 91</code>, e tecle <code>Enter</code>.<br><br>
 
-Quantas páginas você teria que ler por dia?
+  Obtendo o resultado, <code>103</code>, esse exercício tornará verde. Desse modo, você saberá que completou o exercício com sucesso.
+</p>
+/
 
-Digite `870 / 30` seguido de `Enter` no interpretador abaixo e terá a resposta: `29` páginas.
+Nenhum livro introdutório pode deixar de lado o famoso <code>Olá, mundo!</code>. Em Python, é bastante simples exibir essa célebre frase.
 
-O <b>interpretador</b> lê trechos de código e os <b>avalia</b>, ou seja, produz um resultado.
+A função Python para exibir um valor na tela é <code>print()</code>. O valor desejado é colocado dentro dos parênteses.
+
+%
+<p id="exMundo" class="exercise">
+  Clique novamente na janela azul-escuro abaixo, e digite:<br><br>
+
+  <code>print("Olá, mundo!")</code>
+</p>
+/

@@ -24,6 +24,15 @@ A raw HTML block is marked with %
   <tr><td>10</td><td>20</td></tr>
 </table>
 /
+
+An exercise block is marked as
+%
+<p id="exName" class="exercise">
+  <strong>Exercício</strong>:
+</p>
+/
+
+And the exercises handler should be placed in the file ex_chapter_name.js, excluding <script> tags, but naming the function "handleExercises"
 """
 
 import re
@@ -34,10 +43,10 @@ HEADER = '''<!doctype html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/jquery.terminal.css">
-    <link rel="stylesheet" href="../css/codemirror.css">
-    <link rel="stylesheet" href="../css/codemirror_ambiance.css">
-    <link rel="stylesheet" href="../css/livro.css">
+    <link rel="stylesheet" href="../resources/css/jquery.terminal.css">
+    <link rel="stylesheet" href="../resources/css/codemirror.css">
+    <link rel="stylesheet" href="../resources/css/codemirror_ambiance.css">
+    <link rel="stylesheet" href="../resources/css/livro.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <title>Programo Python</title>
   </head>
@@ -63,15 +72,19 @@ FOOTER = '''
 
     <div id="terminal-control" onclick="toggleTerminal()"></div>
 
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/jquery.terminal.js"></script>
-    <script src="../js/unix_formatting.js"></script>
-    <script src="../js/codemirror.js"></script>
-    <script src="../js/codemirror_python.js"></script>
-    <script src="../js/matchbrackets.js"></script>
+    <script src="../resources/js/developUrl.js"></script>
+    <script src="../resources/js/jquery.min.js"></script>
+    <script src="../resources/js/jquery.terminal.js"></script>
+    <script src="../resources/js/unix_formatting.js"></script>
+    <script src="../resources/js/codemirror.js"></script>
+    <script src="../resources/js/codemirror_python.js"></script>
+    <script src="../resources/js/matchbrackets.js"></script>
 
-    <script src="../js/init_codemirror.js"></script>
-    <script src="../js/init_pyodide.js"></script>
+    <script src="../resources/js/init_codemirror.js"></script>
+    <script src="../resources/js/init_pyodide.js"></script>
+    <script>
+    {handle_exercises_js}
+    </script>
   </body>
 </html>
 '''
@@ -83,7 +96,7 @@ INDEX_TEMPLATE_HEADER = '''
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/livro.css">
+    <link rel="stylesheet" href="../resources/css/livro.css">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <title>Programo Python</title>
   </head>
@@ -232,6 +245,13 @@ def convert_raw(cur, prev, nxt, idx):
 
     in_html_block = False
     html_block = []
+
+    try:
+        with open(raw_filename.replace("cap_", "ex_", 1).replace(".txt", ".js")) as handle_exercises_file:
+            handle_exercises_content = handle_exercises_file.read()
+    except FileNotFoundError:
+        handle_exercises_content = ""
+
     with open(raw_filename) as raw_file, open(destination_filename, 'w') as converted_file:
         print(HEADER, file=converted_file)
         for raw_line in raw_file:
@@ -260,7 +280,7 @@ def convert_raw(cur, prev, nxt, idx):
             elif in_html_block:
                 html_block.append(replace_html_special_chars(raw_line))
         print(chapter_links, file=converted_file)
-        print(FOOTER, file=converted_file)
+        print(FOOTER.format(handle_exercises_js = handle_exercises_content), file=converted_file)
 
 
 if __name__ == '__main__':
