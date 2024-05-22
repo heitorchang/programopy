@@ -169,6 +169,9 @@ def clear_console():
       "CTRL+Q": (event, original) => {
          term.disable();
       },
+      "CTRL+R": (event, original) => {
+        return false;  // disable reverse-i-search
+      },
     },
   });
   window.term = term;

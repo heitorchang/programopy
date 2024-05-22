@@ -2,7 +2,7 @@
 Running this script with
 python3 convert_markup.py
 
-will read markup files in raw/ defined at the bottom (chapters variable) and generate the user view HTML files.
+will read HTML files in raw/ defined at the bottom (chapters variable) and generate the user view HTML files.
 
 Description:
 
@@ -130,11 +130,11 @@ INDEX_TEMPLATE_FOOTER = '''
 
 
 def generate_index_chapter_link(n, idx):
-    with open(f"raw/{n}.txt") as f:
+    with open(f"raw/{n}.html") as f:
         for line in f:
             header = line
             break
-    n_name = ' '.join(header.split()[1:])
+    n_name = header.replace("<h1>", "").replace("</h1>", "")
 
     return f'''
     <p>
@@ -200,9 +200,9 @@ def generate_chapter_links(prev, nxt, idx):
     prev_name = ''
     prev_link = ''
     try:
-        with open(f"raw/{prev}.txt") as prev_f:
+        with open(f"raw/{prev}.html") as prev_f:
             for line in prev_f:
-                prev_name = ' '.join(line.split()[1:])
+                prev_name = line.replace("<h1>", "").replace("</h1>", "")
                 break
     except:
         pass
@@ -210,9 +210,9 @@ def generate_chapter_links(prev, nxt, idx):
     next_name = ''
     next_link = ''
     try:
-        with open(f"raw/{nxt}.txt") as next_f:
+        with open(f"raw/{nxt}.html") as next_f:
             for line in next_f:
-                next_name = ' '.join(line.split()[1:])
+                next_name = line.replace("<h1>", "").replace("</h1>", "")
                 break
     except:
         pass
@@ -242,50 +242,22 @@ def generate_chapter_links(prev, nxt, idx):
 
 
 def convert_raw(cur, prev, nxt, idx):
-    raw_filename = f'raw/{cur}.txt'
+    raw_filename = f'raw/{cur}.html'
     print("Converting raw file", raw_filename)
-    destination_filename = raw_filename.replace('raw/', '').replace('.txt', '.html')
-    filename_only = raw_filename.split('/')[-1].replace('.txt', '.html')
+    destination_filename = raw_filename.replace('raw/', '')
+    filename_only = raw_filename.split('/')[-1]
     chapter_links = generate_chapter_links(prev, nxt, idx)
-    in_py_block = False
-    py_block = []
-
-    in_html_block = False
-    html_block = []
 
     try:
-        with open(raw_filename.replace("cap_", "ex_", 1).replace(".txt", ".js")) as handle_exercises_file:
+        with open(raw_filename.replace("cap_", "ex_", 1).replace(".html", ".js")) as handle_exercises_file:
             handle_exercises_content = handle_exercises_file.read()
     except FileNotFoundError:
         handle_exercises_content = ""
 
     with open(raw_filename) as raw_file, open(destination_filename, 'w') as converted_file:
         print(HEADER, file=converted_file)
-        for raw_line in raw_file:
-            if raw_line.strip() == "" and not in_py_block and not in_html_block:
-                continue
-            if raw_line[0] not in "$@%/" and not in_py_block and not in_html_block:
-                raw_line = "$p " + raw_line
-            if raw_line[0] == '$':
-                print(convert_line(raw_line, idx), file=converted_file)
-                print(file=converted_file)
-            elif raw_line.startswith("@"):
-                in_py_block = True
-            elif raw_line.startswith("/"):
-                if in_py_block:
-                    print(wrap_py_block(py_block), file=converted_file)
-                    py_block = []
-                    in_py_block = False
-                elif in_html_block:
-                    print(''.join(html_block), file=converted_file)
-                    html_block = []
-                    in_html_block = False
-            elif in_py_block:
-                py_block.append(raw_line)
-            elif raw_line.startswith("%"):
-                in_html_block = True
-            elif in_html_block:
-                html_block.append(replace_html_special_chars(raw_line))
+        print(chapter_links, file=converted_file)
+        print(raw_file.read(), file=converted_file)
         print(chapter_links, file=converted_file)
         print(FOOTER.format(handle_exercises_js = handle_exercises_content), file=converted_file)
 
@@ -294,9 +266,6 @@ if __name__ == '__main__':
     chapters = [
         'cap_programe_agora',
         'cap_variaveis',
-        'cap_texto',
-        'cap_funcoes',
-        'cap_ambiente_de_desenvolvimento',
     ]
 
     print()

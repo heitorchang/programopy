@@ -1,0 +1,7 @@
+function initGlobals() {
+
+}
+
+function handleExercises() {
+
+}

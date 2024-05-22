@@ -19,28 +19,53 @@
   <a href="index.html" class="home-link">Índice</a>
 </p>
 
-<h1>1. Programe agora mesmo</h1>
+
+        <table class="ch-links">
+          <tr>
+            
+            
+            <td class="next-ch-link">
+              <a href="cap_variaveis.html">2. Variáveis
+ &gt;&gt;&gt; </a>
+            </td>
+        
+          </tr>
+        </table>
+    
+<h1>Programe agora mesmo</h1>
 
 <h3>Python no seu navegador</h3>
 
-<p>Este site inclue um <em>interpretador</em> que executa seu código.</p>
-
-<p>Para começar, experimente usá-lo como uma calculadora.</p>
-
-<p id="exCalc" class="exercise">
-  Clique na janela azul-escuro abaixo, digite o cálculo, <code>12 + 91</code>, e tecle <code>Enter</code>.<br><br>
-
-  Obtendo o resultado, <code>103</code>, esse exercício tornará verde. Desse modo, você saberá que completou o exercício com sucesso.
+<p>
+  Este site inclue um <em>interpretador</em> que executa seu código.
 </p>
 
-<p>Nenhum livro introdutório pode deixar de lado o famoso <code>Olá, mundo!</code>. Em Python, é bastante simples exibir essa célebre frase.</p>
+<p>
+  Para começar, experimente usá-lo como uma calculadora.
+</p>
 
-<p>A função Python para exibir um valor na tela é <code>print()</code>. O valor desejado é colocado dentro dos parênteses.</p>
+<p id="exCalc" class="exercise">
+  Clique na janela azul-escuro abaixo, digite <code>12 + 91</code>, e tecle <code>Enter</code>.<br><br>
+
+  Obtendo o resultado, <code>103</code>, esse exercício se tornará verde. Isso indica que você completou o exercício com sucesso.
+</p>
+
+<p>
+  Nenhum livro introdutório pode deixar de lado a famosa frase <code>Olá, mundo!</code>. Em Python, exibir essa frase é bem simples.
+</p>
+
+<p>
+  A função Python para exibir um valor na tela é <code>print()</code>. O valor desejado é colocado dentro dos parênteses. Observe que valores de texto devem estar dentro de aspas: <code>"alguma coisa"</code>. Podem ser usadas aspas simples também: <code>'outra coisa'</code>.
+</p>
 
 <p id="exMundo" class="exercise">
   Clique novamente na janela azul-escuro abaixo, e digite:<br><br>
 
   <code>print("Olá, mundo!")</code>
+</p>
+
+<p>
+  Tente digitar <code>print(ola)</code>, sem o mundo, e sem aspas. Aparecerá um erro, <code>NameError</code>. No <a href="cap_variaveis.html">próximo capítulo</a>, você entenderá o que ele significa, e como fazer algo útil com <code>ola</code>.
 </p>
 
 
@@ -49,7 +74,8 @@
             
             
             <td class="next-ch-link">
-              <a href="cap_variaveis.html">2. Variáveis &gt;&gt;&gt; </a>
+              <a href="cap_variaveis.html">2. Variáveis
+ &gt;&gt;&gt; </a>
             </td>
         
           </tr>
@@ -78,14 +104,22 @@
     <script src="../resources/js/init_codemirror.js"></script>
     <script src="../resources/js/init_pyodide.js"></script>
     <script>
-    function handleExercises() {
+    function initGlobals() {
+  // use "pyodide.runPython(`...`);" to run Python code
+}
+
+
+function handleExercises() {
   const lastTermValue = termEchoLog[termEchoLog.length - 1];
   if (lastTermValue === '103') {
     $("#exCalc").addClass('exercise-correct');
   }
-  const lastTermValueLower = lastTermValue.toLowerCase().replace(",", "");
-  if (lastTermValue === 'Olá, mundo!' || lastTermValueLower.includes("ola mundo")) {
-    $("#exMundo").addClass('exercise-correct');
+  if (lastTermValue != null) {
+    const lastTermValueLower = lastTermValue.toLowerCase().replace(",", "");
+    console.log(lastTermValueLower);
+    if (lastTermValueLower.includes("olá mundo") || lastTermValueLower.includes("ola mundo")) {
+      $("#exMundo").addClass('exercise-correct');
+    }
   }
 }
 
