@@ -1,8 +1,8 @@
 """
-Running this script with
-python3 convert_markup.py
+Run this script with
+python3 build_livro.py
 
-will read HTML files in raw/ defined at the bottom (chapters variable) and generate the user view HTML files.
+it will read HTML files in raw/ defined at the bottom (chapters variable) and generate the user view HTML files.
 
 Description:
 
