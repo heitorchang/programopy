@@ -1,9 +1,9 @@
 "use strict";
 
-const cm_instances = new Map();
 let termEchoLog = [];  // Custom. Save what is "echoed" by the terminal. Does not save assignments' values.
-console.log("termEchoLog");
-console.log(termEchoLog);
+let termUserInputLog = [];  // Custom. Record what the user typed in the terminal.
+
+const cm_instances = new Map();
 
 async function main() {
   console.log("Pyodide Core's indexURL is " + indexURL);
@@ -91,6 +91,7 @@ def clear_console():
     // multiline should be split (useful when pasting)
     for (const c of command.split("\n")) {
       const escaped = c.replaceAll(/\u00a0/g, " ");
+      termUserInputLog.push(escaped);
       let fut = pyconsole.push(escaped);
       term.set_prompt(fut.syntax_check === "incomplete" ? ps2 : ps1);
       switch (fut.syntax_check) {

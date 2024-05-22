@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../resources/css/jquery.terminal.css">
+    <link rel="stylesheet" href="../resources/css/codemirror.css">
+    <link rel="stylesheet" href="../resources/css/codemirror_ambiance.css">
+    <link rel="stylesheet" href="../resources/css/livro.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>Programo Python</title>
+  </head>
+  <body>
+    <div id="loading">&nbsp;</div>
+
+    <div id="content">
+      <div id="chapter">
+<p>
+  <a href="index.html" class="home-link">Índice</a>
+</p>
+
+
+        <table class="ch-links">
+          <tr>
+
+
+            <td class="next-ch-link">
+              <a href="cap_variaveis.html">2. Variáveis
+ &gt;&gt;&gt; </a>
+            </td>
+
+          </tr>
+        </table>
+
+<h1>Demo</h1>
+
+<p>
+  Esta página é uma demonstração.
+</p>
+
+<p id="exCalc" class="exercise">
+  <strong>Exercício</strong>: Clique na janela azul-escuro abaixo, digite <code>12 + 91</code>, e tecle <code>Enter</code>.<br><br>
+
+  Obtendo o resultado, <code>103</code>, esse exercício se tornará verde. Isso indica que você completou o exercício com sucesso.
+</p>
+
+<p>
+  Nenhum livro introdutório pode deixar de lado a famosa frase <code>Olá, mundo!</code>. Em Python, exibir essa frase é bem simples.
+</p>
+
+<p>
+  A função Python para exibir um valor na tela é <code>print()</code>. O valor desejado é colocado dentro dos parênteses. Observe que valores de texto devem estar dentro de aspas: <code>"alguma coisa"</code>. Podem ser usadas aspas simples também: <code>'outra coisa'</code>.
+</p>
+
+<p id="exMundo" class="exercise">
+  <strong>Exercício</strong>: Clique novamente na janela azul-escuro abaixo, e digite:<br><br>
+
+  <code>print("Olá, mundo!")</code>
+</p>
+
+<p>
+  Tente digitar <code>print(ola)</code>, sem o mundo, e sem aspas. Aparecerá um erro, <code>NameError</code>. No <a href="cap_variaveis.html">próximo capítulo</a>, você entenderá o que ele significa, e como fazer algo útil com <code>ola</code>.
+</p>
+
+
+        <table class="ch-links">
+          <tr>
+
+
+            <td class="next-ch-link">
+              <a href="cap_variaveis.html">2. Variáveis
+ &gt;&gt;&gt; </a>
+            </td>
+
+          </tr>
+        </table>
+
+
+  <p>
+    <a href="index.html" class="home-link">Índice</a>
+  </p>
+  </div>
+
+  <div id="bottom-padding">&nbsp;</div>
+
+</div>
+
+    <div id="terminal-control" onclick="toggleTerminal()"></div>
+
+    <script src="../resources/js/developUrl.js"></script>
+    <script src="../resources/js/jquery.min.js"></script>
+    <script src="../resources/js/jquery.terminal.js"></script>
+    <script src="../resources/js/unix_formatting.js"></script>
+    <script src="../resources/js/codemirror.js"></script>
+    <script src="../resources/js/codemirror_python.js"></script>
+    <script src="../resources/js/matchbrackets.js"></script>
+
+    <script src="../resources/js/init_codemirror.js"></script>
+    <script src="../resources/js/init_pyodide.js"></script>
+    <script>
+    function initGlobals() {
+  // use "pyodide.runPython(`...`);" to run Python code
+}
+
+
+function handleExercises() {
+  const lastTermValue = termEchoLog[termEchoLog.length - 1];
+  if (lastTermValue === '103') {
+    $("#exCalc").addClass('exercise-correct');
+  }
+  if (lastTermValue != null) {
+    const lastTermValueLower = lastTermValue.toLowerCase().replace(",", "");
+    if (lastTermValueLower.includes("olá mundo") || lastTermValueLower.includes("ola mundo")) {
+      $("#exMundo").addClass('exercise-correct');
+    }
+  }
+}
+
+    </script>
+  </body>
+</html>
