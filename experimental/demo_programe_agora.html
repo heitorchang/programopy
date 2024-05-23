@@ -98,26 +98,11 @@
     <script src="../resources/js/init_codemirror.js"></script>
     <script src="../resources/js/init_pyodide.js"></script>
     <script>
-    function initGlobals() {
-  // use "pyodide.runPython(`...`);" to run Python code
-}
-
-
-function handleExercises() {
-  const lastTermValue = termEchoLog[termEchoLog.length - 1];
-  if (lastTermValue === '103') {
-    $("#exCalc").addClass('exercise-correct');
-  }
-  if (lastTermValue != null) {
-    const lastTermValueLower = lastTermValue.toLowerCase().replace(",", "");
-    if (lastTermValueLower.includes("olá mundo") || lastTermValueLower.includes("ola mundo")) {
-      $("#exMundo").addClass('exercise-correct');
-    }
-  }
-}
-
+    let tileInc = 1;
     function addTile(size, color) {
-      const id = Date.now().toString();
+      // might make more sense to make this object-oriented and define methods to move and delete
+      const id = "tile" + tileInc;
+      tileInc++;
       let tileColor = "#ccc";
       if (CSS.supports('color', color)) {
         tileColor = color;
@@ -134,6 +119,25 @@ function handleExercises() {
     function deleteTile(id) {
       $(`#${id}`).remove();
     }
+
+    function initGlobals() {
+      // use "pyodide.runPython(`...`);" to run Python code
+      pyodide.runPython(`from js import addTile, moveTile, deleteTile`);
+    }
+
+    function handleExercises() {
+      const lastTermValue = termEchoLog[termEchoLog.length - 1];
+  if (lastTermValue === '103') {
+    $("#exCalc").addClass('exercise-correct');
+  }
+  if (lastTermValue != null) {
+    const lastTermValueLower = lastTermValue.toLowerCase().replace(",", "");
+    if (lastTermValueLower.includes("olá mundo") || lastTermValueLower.includes("ola mundo")) {
+      $("#exMundo").addClass('exercise-correct');
+    }
+  }
+}
+
     </script>
   </body>
 </html>
