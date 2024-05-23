@@ -116,6 +116,24 @@ function handleExercises() {
   }
 }
 
+    function addTile(size, color) {
+      const id = Date.now().toString();
+      let tileColor = "#ccc";
+      if (CSS.supports('color', color)) {
+        tileColor = color;
+      }
+      const tile = $(`<div id="${id}" style="width: ${size}px; height: ${size}px; background-color: ${tileColor}; position: fixed; left: 0; top: 0;"></div>`);
+      $("#content").append(tile);
+      return id;
+    }
+
+    function moveTile(id, newX, newY) {
+      $(`#${id}`).css({left: newX, top: newY});
+    }
+
+    function deleteTile(id) {
+      $(`#${id}`).remove();
+    }
     </script>
   </body>
 </html>

@@ -198,6 +198,8 @@ def clear_console():
 
   // Initialize custom Python code
   pyodide.runPython(`
+import js
+
 print_log = ["---STATEMENT---"]
 
 def tritest(*args):
