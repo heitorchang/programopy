@@ -1,6 +1,7 @@
 Todo
 ----
-[  ] redo initial chapters with travel examples. foreign exch conversion, days in hotel, discount, country/city name as strings. "My first stop is..."
+[  ] rewrite experimental "addTile" function so it's limited to a div inside the page content (don't let it leave this "sandbox" div)
+[NO] redo initial chapters with travel examples. foreign exch conversion, days in hotel, discount, country/city name as strings. "My first stop is...". Abandon travel idea for the entire book, it's too restrictive
 
 
 Chapters to write
